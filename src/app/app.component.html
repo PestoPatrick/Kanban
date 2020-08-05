@@ -1,1 +1,38 @@
 <router-outlet></router-outlet>
+<div class="route">
+  <div class="navbar has-background-dark">
+    <div class="navbar-brand">
+      <div class="navbar-item">
+        <h1 class="app-name has-gradient-text">Kanban</h1>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="board">
+    <div class="board-bar">
+      <p class="board-name">Board Name</p>
+    </div>
+
+    <div class="board-wrapper">
+      <div class="board-columns" cdkDropListGroup>
+        <div class="board-column">
+          <div class="column-title">
+            ToDo
+          </div>
+        </div>
+        <div class="board-column">
+          <div class="column-title">
+            Done
+          </div>
+        </div>
+        <div class="board-column">
+          <div class="column-title">
+            Status
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
