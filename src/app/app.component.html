@@ -1,38 +1,30 @@
 <router-outlet></router-outlet>
-<div class="route">
+
+<div class="root">
   <div class="navbar has-background-dark">
     <div class="navbar-brand">
       <div class="navbar-item">
-        <h1 class="app-name has-gradient-text">Kanban</h1>
+        <h1 class="app-name has-gradient-text">kanban</h1>
       </div>
     </div>
   </div>
-
 
   <div class="board">
+
     <div class="board-bar">
-      <p class="board-name">Board Name</p>
+      <p class="board-name">
+        Tie Dye Boutique
+      </p>
     </div>
 
-    <div class="board-wrapper">
-      <div class="board-columns" cdkDropListGroup>
-        <div class="board-column">
-          <div class="column-title">
-            ToDo
-          </div>
-        </div>
-        <div class="board-column">
-          <div class="column-title">
-            Done
-          </div>
-        </div>
-        <div class="board-column">
-          <div class="column-title">
-            Status
-          </div>
-        </div>
+  <app-order-columns>
+    <app-orders>
+      <h1>This is a task</h1>
+    </app-orders>
+  </app-order-columns>
 
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+
+
