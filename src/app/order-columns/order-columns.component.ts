@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TASKS } from '../mock-tasks';
 
 @Component({
   selector: 'app-order-columns',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-columns.component.scss']
 })
 export class OrderColumnsComponent implements OnInit {
+
+
+  tasks = TASKS;
 
   constructor() { }
 

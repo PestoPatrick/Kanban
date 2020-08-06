@@ -1,5 +1,5 @@
-<div class="task-container">
+<div class="task-container" *ngIf="task">
   <div class="task">
-    Hello
+    <p>id: {{task.id}} Name: {{task.name}}</p>
   </div>
 </div>

@@ -2,7 +2,10 @@
     <div class="board-columns" cdkDropListGroup>
         <div class="board-column">
           <div class="column-title">
-            Column title
+            Hello
+          </div>
+          <div>
+            <app-orders *ngFor="let task of tasks" [task]="task" >{{task}}</app-orders>
           </div>
         </div>
       </div>
