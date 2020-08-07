@@ -8,7 +8,7 @@ import { Task } from '../task';
 })
 export class OrdersComponent implements OnInit {
 
-  @Input() task: Task;
+  @Input() task;
 
 
 

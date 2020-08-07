@@ -1,5 +1,5 @@
-<div class="task-container" *ngIf="task">
+<div class="task-container" *ngIf="task" cdkDrag>
   <div class="task">
-    <p>id: {{task.id}} Name: {{task.name}}</p>
+    <p>Task: {{task}}</p>
   </div>
 </div>
