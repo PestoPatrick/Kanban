@@ -4,7 +4,7 @@
       <div class="column-title">
         Ordered
       </div>
-      <div class="task-box" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="tasks1">
+      <div (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="tasks1">
         <app-orders [task]="task" *ngFor="let task of tasks1" [task]="task">{{task}}</app-orders>
       </div>
     </div>
