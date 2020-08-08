@@ -1,10 +1,10 @@
-<div class="board-wrapper">
-  <div class="board-columns" cdkDropListGroup>
+<div class="board-wrapper" cdkDropListGroup>
+  <div class="board-columns" >
     <div class="board-column">
       <div class="column-title">
         Ordered
       </div>
-      <div (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="tasks1">
+      <div class="task-area"(cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="tasks1">
         <app-orders [task]="task" *ngFor="let task of tasks1" [task]="task">{{task}}</app-orders>
       </div>
     </div>
