@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { TASKS } from '../mock-tasks';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import {ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
+
 
 @Component({
   selector: 'app-order-columns',
   templateUrl: './order-columns.component.html',
-  styleUrls: ['./order-columns.component.scss']
+  styleUrls: ['./order-columns.component.scss'],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OrderColumnsComponent implements OnInit {
 

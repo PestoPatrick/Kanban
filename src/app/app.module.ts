@@ -8,6 +8,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrderColumnsComponent } from './order-columns/order-columns.component';
 import { OrdersComponent } from './orders/orders.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { OrdersComponent } from './orders/orders.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DragDropModule
+    DragDropModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
