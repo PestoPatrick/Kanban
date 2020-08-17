@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from "../task";
+import { Order} from "../order";
 import { OrderService } from "../order.service";
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import {ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
@@ -16,7 +16,7 @@ export class OrderColumnsComponent implements OnInit {
 
 
 
-  tasks1: Task[];
+  tasks1: Order[];
 
   tasks2 = [
     'Get up',
@@ -40,7 +40,7 @@ export class OrderColumnsComponent implements OnInit {
 
   getTasks(): void {
     this.orderService.getTasks()
-    .subscribe(tasks => this.tasks1 = tasks)
+    .subscribe(orders => this.tasks1 = orders)
   }
 
 

@@ -1,6 +1,6 @@
-import { Task } from './task';
+import { Order } from './order';
 
-export const TASKS: Task[] = [
+export const ORDERS: Order[] = [
   { id: 11, name: 'Dr Nice' },
   { id: 12, name: 'Narco' },
   { id: 13, name: 'Bombasto' },
