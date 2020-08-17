@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { TASKS } from '../mock-tasks';
+import { Task } from "../task";
+import { OrderService } from "../order.service";
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import {ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
 
@@ -15,12 +16,7 @@ export class OrderColumnsComponent implements OnInit {
 
 
 
-  tasks1 = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
-  ];
+  tasks1: Task[];
 
   tasks2 = [
     'Get up',
@@ -42,11 +38,15 @@ export class OrderColumnsComponent implements OnInit {
     }
   }
 
+  getTasks(): void {
+    this.orderService.getTasks()
+    .subscribe(tasks => this.tasks1 = tasks)
+  }
 
 
-  constructor() { }
+  constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
-
+    this.getTasks();
   }
 }

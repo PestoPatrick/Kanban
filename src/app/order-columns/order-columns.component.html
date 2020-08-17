@@ -7,10 +7,9 @@
         Ordered
       </div>
       <div class="task-area"(cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="tasks1">
-        <app-orders [task]="task" *ngFor="let task of tasks1" [task]="task">{{task}}</app-orders>
+        <app-orders [task]="task" *ngFor="let task of tasks1">{{task.id}}{{task.name}}</app-orders>
       </div>
     </div>
-
 
     <div class="board-column">
       <div class="column-title">
