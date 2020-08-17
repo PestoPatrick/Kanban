@@ -7,7 +7,7 @@
         Ordered
       </div>
       <div class="task-area"(cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="tasks1">
-        <app-orders [task]="task" *ngFor="let task of tasks1">{{task.id}}{{task.name}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of tasks1">{{order}}</app-orders>
       </div>
     </div>
 
@@ -16,7 +16,7 @@
         In Stock
       </div>
       <div (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="tasks2">
-        <app-orders [task]="task" *ngFor="let task of tasks2">{{task}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of tasks2">{{order}}</app-orders>
       </div>
     </div>
 
@@ -26,7 +26,7 @@
         Soak
       </div>
       <div (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="tasks2">
-        <app-orders [task]="task" *ngFor="let task of tasks2">{{task}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of tasks2">{{order}}</app-orders>
       </div>
     </div>
   </div>

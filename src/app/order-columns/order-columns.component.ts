@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Order} from "../order";
-import { OrderService } from "../order.service";
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import {ChangeDetectionStrategy, ViewEncapsulation} from '@angular/core';
-
+import { Order } from '../order';
+import { OrderService } from '../order.service';
+import {
+  CdkDragDrop,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
+import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-order-columns',
   templateUrl: './order-columns.component.html',
   styleUrls: ['./order-columns.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderColumnsComponent implements OnInit {
-
-
-
   tasks1: Order[];
 
   tasks2 = [
@@ -23,30 +23,37 @@ export class OrderColumnsComponent implements OnInit {
     'Brush teeth',
     'Take a shower',
     'Check e-mail',
-    'Walk dog'
+    'Walk dog',
   ];
-
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
-      console.log(moveItemInArray(event.container.data, event.previousIndex, event.currentIndex));
+      console.log(
+        moveItemInArray(
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        )
+      );
     } else {
-      console.log(transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex));
+      console.log(
+        transferArrayItem(
+          event.previousContainer.data,
+          event.container.data,
+          event.previousIndex,
+          event.currentIndex
+        )
+      );
     }
   }
 
-  getTasks(): void {
-    this.orderService.getTasks()
-    .subscribe(orders => this.tasks1 = orders)
+  getOrders(): void {
+    this.orderService.getOrders().subscribe((orders) => (this.tasks1 = orders));
   }
 
-
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService) {}
 
   ngOnInit(): void {
-    this.getTasks();
+    this.getOrders();
   }
 }
