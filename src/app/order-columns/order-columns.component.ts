@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order';
 import { OrderService } from '../order.service';
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  transferArrayItem,
-} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
 @Component({
@@ -16,9 +12,9 @@ import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderColumnsComponent implements OnInit {
-  tasks1: Order[];
+  orders1: Order[];
 
-  tasks2 = [
+  orders2 = [
     'Get up',
     'Brush teeth',
     'Take a shower',
@@ -32,7 +28,7 @@ export class OrderColumnsComponent implements OnInit {
     'Newer random stuff',
     'Lots to do'
   ];
-  
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       console.log(
@@ -55,10 +51,16 @@ export class OrderColumnsComponent implements OnInit {
   }
 
   getOrders(): void {
-    this.orderService.getOrders().subscribe((orders) => (this.tasks1 = orders));
+    this.orderService.getOrders()
+      .subscribe((orders: Order[]) => {
+        this.orders1 = orders;
+        console.log(this.orders1);
+      });
   }
 
-  constructor(private orderService: OrderService) {}
+
+  constructor(private orderService: OrderService) {
+  }
 
   ngOnInit(): void {
     this.getOrders();

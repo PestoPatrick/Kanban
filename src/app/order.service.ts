@@ -1,24 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Order } from './order';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, map, tap, retry } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OrderService {
-  private OrdersUrl = 'localhost:3000/orders/all';
+  private OrdersUrl = 'http://ec2-3-9-176-114.eu-west-2.compute.amazonaws.com:3000/orders/all';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.OrdersUrl).pipe(
-      tap((_) => console.log('fetched heroes')),
-      catchError(this.handleError<Order[]>('getOrders', []))
-    );
+  getOrders() {
+    return this.http.get<Order[]>(this.OrdersUrl);
   }
-
   /**
    * Handle Http operation that failed.
    * Let the app continue.
