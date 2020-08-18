@@ -1,20 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Task } from '../task';
+import { Order } from '../order';
 
 @Component({
   selector: 'app-orders',
   templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.scss']
+  styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent implements OnInit {
+  @Input() order;
 
-  @Input() task;
+  constructor() {}
 
-
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
