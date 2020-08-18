@@ -26,6 +26,13 @@ export class OrderColumnsComponent implements OnInit {
     'Walk dog',
   ];
 
+  tasks3 = [
+    'More random tasks',
+    'Random stuff',
+    'Newer random stuff',
+    'Lots to do'
+  ];
+  
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       console.log(
