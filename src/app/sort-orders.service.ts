@@ -9,7 +9,7 @@ export class SortOrdersService {
 
   orderColumns: OrderColumn[];
 
-  sortOrders() {
+  sortOrders(orders: Array<[]>) {
 
   }
 

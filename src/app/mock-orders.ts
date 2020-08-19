@@ -16,4 +16,4 @@ const order = {
   Delivery: false,
   State: 'ordered',
   Date: '2020-08-11T21:55:59.900Z'
-}
+};
