@@ -12,6 +12,7 @@ import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderColumnsComponent implements OnInit {
+
   orders1: Order[];
 
   orders2 = [
@@ -22,7 +23,7 @@ export class OrderColumnsComponent implements OnInit {
     'Walk dog',
   ];
 
-  tasks3 = [
+  orders3 = [
     'More random tasks',
     'Random stuff',
     'Newer random stuff',

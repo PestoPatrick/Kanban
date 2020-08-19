@@ -15,9 +15,19 @@
       <div class="column-title">
         Hello
       </div>
-      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders1">
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders2">
         <app-orders [order]="order" *ngFor="let order of orders2">{{order}}</app-orders>
       </div>
     </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        Hello
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
   </div>
 </div>

@@ -9,6 +9,7 @@ import { Order } from '../order';
 export class OrdersComponent implements OnInit {
   @Input() order;
 
+
   constructor() { }
 
   ngOnInit(): void { }

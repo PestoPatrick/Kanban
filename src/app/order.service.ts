@@ -12,8 +12,10 @@ export class OrderService {
 
   constructor(private http: HttpClient) { }
 
-  getOrders() {
-    return this.http.get<Order[]>(this.OrdersUrl);
+  getOrders(): Observable<Order[]> {
+    return this.http.get<Order[]>(this.OrdersUrl)
+      .pipe(catchError(this.handleError<Order[]>('getOrders', []))
+      );
   }
   /**
    * Handle Http operation that failed.
