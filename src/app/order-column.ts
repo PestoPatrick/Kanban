@@ -1,15 +1,15 @@
 export interface OrderColumn {
-  Ordered: object;
-  InStock: object;
-  Soak: object;
-  Tied: object;
-  Died: object;
-  Rinsed: object;
-  Washed: object;
-  Dry: object;
-  Iron: object;
-  Package: object;
-  Posted: object;
-  Delivered: object;
-  Completed: object;
+  Ordered: Array<object>;
+  InStock: Array<object>;
+  Soak: Array<object>;
+  Tied: Array<object>;
+  Dyed: Array<object>;
+  Rinsed: Array<object>;
+  Washed: Array<object>;
+  Dry: Array<object>;
+  Iron: Array<object>;
+  Package: Array<object>;
+  Posted: Array<object>;
+  Delivered: Array<object>;
+  Completed: Array<object>;
 }

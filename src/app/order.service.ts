@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Order } from './order';
-import { catchError, map, tap, retry } from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 

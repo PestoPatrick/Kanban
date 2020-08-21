@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order';
 import { OrderService } from '../order.service';
+import { SortOrdersService } from '../sort-orders.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 
@@ -51,8 +52,8 @@ export class OrderColumnsComponent implements OnInit {
     }
   }
 
-  getOrders(): void {
-    this.orderService.getOrders()
+  SortedOrders(): void {
+    this.sortedOrders.getOrders()
       .subscribe((orders: Order[]) => {
         this.orders1 = orders;
         console.log(this.orders1);
@@ -60,10 +61,10 @@ export class OrderColumnsComponent implements OnInit {
   }
 
 
-  constructor(private orderService: OrderService) {
+  constructor(private sortedOrders: SortOrdersService) {
   }
 
   ngOnInit(): void {
-    this.getOrders();
+    this.SortedOrders();
   }
 }
