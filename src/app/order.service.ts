@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class OrderService {
-  private OrdersUrl = 'http://ec2-3-9-176-114.eu-west-2.compute.amazonaws.com:3000/orders/all';
+  private OrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/all';
 
   constructor(private http: HttpClient) { }
 
