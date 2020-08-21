@@ -14,7 +14,7 @@ import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 })
 export class OrderColumnsComponent implements OnInit {
 
-  orders1: Order[];
+  orders1 = [];
 
   orders2 = [
     'Get up',
