@@ -4,16 +4,20 @@
   <div class="board-columns">
     <div class="board-column">
       <div class="column-title">
-        Ordered
+        <div class="column-ordered">
+          Ordered
+        </div>
       </div>
-      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders1">
-        <app-orders [order]="order" *ngFor="let order of orders1">{{order}}</app-orders>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="allorders">
+        <app-orders [order]="order" *ngFor="let order of allorders">{{order}}</app-orders>
       </div>
     </div>
 
     <div class="board-column">
       <div class="column-title">
-        Hello
+        <div class="column-instock">
+          In Stock
+        </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders2">
         <app-orders [order]="order" *ngFor="let order of orders2">{{order}}</app-orders>
@@ -22,12 +26,123 @@
 
     <div class="board-column">
       <div class="column-title">
-        Hello 2
+        <div class="column-soaked">
+          Soaked
+        </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
         <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
       </div>
     </div>
 
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-tied">
+          Tied
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-dyed">
+          Dyed
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-rinsed">
+          Rinsed
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-washed">
+          Washed
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-dried">
+          Dried
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-ironed">
+          Ironed
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-packaged">
+          Packaged
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-posted">
+          Posted
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-delivered">
+          Delivered
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
+
+    <div class="board-column">
+      <div class="column-title">
+        <div class="column-completed">
+          Completed
+        </div>
+      </div>
+      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders3">
+        <app-orders [order]="order" *ngFor="let order of orders3">{{order}}</app-orders>
+      </div>
+    </div>
   </div>
 </div>

@@ -14,7 +14,22 @@ import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 })
 export class OrderColumnsComponent implements OnInit {
 
-  orders1 = [];
+  allorders = [];
+
+  ordered = [];
+  instock = [];
+  soaked = [];
+  tied = [];
+  dyed = [];
+  rinsed = [];
+  washed = [];
+  dried = []
+  ironed = [];
+  packaged = [];
+  posted = [];
+  delivered = [];
+  completed = [];
+
 
   orders2 = [
     'Get up',
@@ -55,8 +70,10 @@ export class OrderColumnsComponent implements OnInit {
   SortedOrders(): void {
     this.sortedOrders.getOrders()
       .subscribe((orders: Order[]) => {
-        this.orders1 = orders;
-        console.log(this.orders1);
+
+        // can do the assigning of orders here instead of
+        // making an all orders array
+        this.allorders = orders;
       });
   }
 
