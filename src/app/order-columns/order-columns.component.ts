@@ -4,7 +4,7 @@ import { OrderService } from '../order.service';
 import { SortOrdersService } from '../sort-orders.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
-import { observable } from 'rxjs';
+import { observable, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-order-columns',
@@ -14,8 +14,7 @@ import { observable } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderColumnsComponent implements OnInit {
-
-  allorders = [];
+  ordersJSON = [];
 
   ordered = [];
   instock = [];
@@ -68,22 +67,55 @@ export class OrderColumnsComponent implements OnInit {
     }
   }
 
-  SortedOrders(): void {
+  sortOrders() {
 
-    this.sortedOrders.getOrders()
-      .subscribe((orders: Order[]) => {
-        this.allorders = orders;
-        console.log(this.allorders);
-        // can do the assigning of orders here instead of
-        // making an all orders array
-      });
   }
 
+  getOrders(): void {
+    this.orderService.getOrders()
+      .subscribe((orders: Order[]) => {
+        this.ordersJSON = orders;
+        console.log(this.ordersJSON);
+        for (let i in this.ordersJSON) {
+          if (this.ordersJSON[i].State === 'ordered') {
+            this.ordered.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'instock') {
+            this.instock.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'soaked') {
+            this.soaked.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'tied') {
+            this.tied.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'dyed') {
+            this.dyed.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'rinsed') {
+            this.rinsed.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'washed') {
+            this.washed.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'dried') {
+            this.dried.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'ironed') {
+            this.ironed.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'packaged') {
+            this.packaged.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'posted') {
+            this.posted.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'delivered') {
+            this.delivered.push(this.ordersJSON[i]);
+          } else if (this.ordersJSON[i].State === 'completed') {
+            this.completed.push(this.ordersJSON[i]);
+          }
+        }
+        console.log(this.completed);
+      });
+  }
+  // can do the assigning of orders here instead of
+  // making an all orders array
 
-  constructor(private sortedOrders: SortOrdersService) {
+
+  constructor(private orderService: OrderService) {
   }
 
   ngOnInit(): void {
-    this.SortedOrders();
+    this.getOrders();
   }
 }

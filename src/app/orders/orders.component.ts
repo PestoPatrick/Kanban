@@ -7,7 +7,7 @@ import { Order } from '../order';
   styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent implements OnInit {
-  @Input() order: Order[];
+  @Input() order: Order;
 
 
   constructor() { }

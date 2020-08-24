@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +8,7 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 export class AppComponent {
   title = 'Kanban';
 
-    todo = [
+  todo = [
     'Get to work',
     'Pick up groceries',
     'Go home',

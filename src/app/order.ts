@@ -1,7 +1,7 @@
 export interface Order {
   id: string;
-  name: string;
-  date: string;
+  Name: string;
+  Date: string;
   FB: boolean;
   Instagram: boolean;
   Email: boolean;
