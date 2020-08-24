@@ -4,6 +4,7 @@ import { OrderService } from '../order.service';
 import { SortOrdersService } from '../sort-orders.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
+import { observable } from 'rxjs';
 
 @Component({
   selector: 'app-order-columns',
@@ -68,12 +69,13 @@ export class OrderColumnsComponent implements OnInit {
   }
 
   SortedOrders(): void {
+
     this.sortedOrders.getOrders()
       .subscribe((orders: Order[]) => {
-
+        this.allorders = orders;
+        console.log(this.allorders);
         // can do the assigning of orders here instead of
         // making an all orders array
-        this.allorders = orders;
       });
   }
 

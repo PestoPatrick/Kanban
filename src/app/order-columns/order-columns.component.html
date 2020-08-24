@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="allorders">
-        <app-orders [order]="order" *ngFor="let order of allorders">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of ordered">{{order}}</app-orders>
       </div>
     </div>
 
