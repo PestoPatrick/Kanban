@@ -23,7 +23,7 @@ export class OrderColumnsComponent implements OnInit {
   dyed = [];
   rinsed = [];
   washed = [];
-  dried = []
+  dried = [];
   ironed = [];
   packaged = [];
   posted = [];
