@@ -9,14 +9,17 @@ import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrderColumnsComponent } from './order-columns/order-columns.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderDetailsComponent,
     OrderColumnsComponent,
-    OrdersComponent
+    OrdersComponent,
+    HttpClientModule
   ],
   imports: [
     BrowserModule,

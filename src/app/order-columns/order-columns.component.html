@@ -6,7 +6,8 @@
           Ordered
         </div>
       </div>
-      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="ordered">
+      <div class="task-area" (cdkDropListDropped)="drop($event)" *ngIf="ordered" cdkDropList
+        [cdkDropListData]="ordered">
         <app-orders [order]="order" *ngFor="let order of ordered">{{order.Name}}</app-orders>
       </div>
     </div>
@@ -149,7 +150,8 @@
           Completed
         </div>
       </div>
-      <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="orders2">
+      <div class="task-area" (cdkDropListDropped)="drop($event)" *ngIf="orders2" cdkDropList
+        [cdkDropListData]="orders2">
         <app-orders [order]="order" *ngFor="let order of orders2">{{order}}</app-orders>
       </div>
     </div>
