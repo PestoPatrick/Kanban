@@ -10,6 +10,7 @@ import { OrderColumnsComponent } from './order-columns/order-columns.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     OrderDetailsComponent,
     OrderColumnsComponent,
     OrdersComponent,
-    HttpClientModule
   ],
   imports: [
     BrowserModule,
@@ -29,6 +29,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     ScrollingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

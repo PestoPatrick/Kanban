@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../order';
 import { OrderService } from '../order.service';
-import { SortOrdersService } from '../sort-orders.service';
+
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { observable, Observable } from 'rxjs';
@@ -68,7 +68,35 @@ export class OrderColumnsComponent implements OnInit {
   }
 
   sortOrders() {
-
+    for (let i in this.ordersJSON) {
+      if (this.ordersJSON[i].State === 'ordered') {
+        this.ordered.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'instock') {
+        this.instock.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'soaked') {
+        this.soaked.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'tied') {
+        this.tied.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'dyed') {
+        this.dyed.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'rinsed') {
+        this.rinsed.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'washed') {
+        this.washed.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'dried') {
+        this.dried.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'ironed') {
+        this.ironed.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'packaged') {
+        this.packaged.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'posted') {
+        this.posted.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'delivered') {
+        this.delivered.push(this.ordersJSON[i]);
+      } else if (this.ordersJSON[i].State === 'completed') {
+        this.completed.push(this.ordersJSON[i]);
+      }
+    }
   }
 
   getOrders(): void {
@@ -76,35 +104,6 @@ export class OrderColumnsComponent implements OnInit {
       .subscribe((orders: Order[]) => {
         this.ordersJSON = orders;
         console.log(this.ordersJSON);
-        for (let i in this.ordersJSON) {
-          if (this.ordersJSON[i].State === 'ordered') {
-            this.ordered.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'instock') {
-            this.instock.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'soaked') {
-            this.soaked.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'tied') {
-            this.tied.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'dyed') {
-            this.dyed.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'rinsed') {
-            this.rinsed.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'washed') {
-            this.washed.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'dried') {
-            this.dried.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'ironed') {
-            this.ironed.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'packaged') {
-            this.packaged.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'posted') {
-            this.posted.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'delivered') {
-            this.delivered.push(this.ordersJSON[i]);
-          } else if (this.ordersJSON[i].State === 'completed') {
-            this.completed.push(this.ordersJSON[i]);
-          }
-        }
         console.log(this.completed);
       });
   }
@@ -115,7 +114,10 @@ export class OrderColumnsComponent implements OnInit {
   constructor(private orderService: OrderService) {
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getOrders();
   }
 }
+
+
+// Make an asynchronous function that calls get orders and then sort orders
