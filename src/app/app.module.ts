@@ -12,6 +12,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { RouterModule } from '@angular/router';
     AppRoutingModule,
     DragDropModule,
     HttpClientModule,
-    ScrollingModule
+    ScrollingModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

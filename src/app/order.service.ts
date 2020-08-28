@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Order } from './order';
-import { catchError } from 'rxjs/operators';
+import { retry, catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
@@ -14,7 +14,7 @@ export class OrderService {
 
   getOrders(): Observable<Order[]> {
     return this.http.get<Order[]>(this.OrdersUrl)
-      .pipe(catchError(this.handleError<Order[]>('getOrders', []))
+      .pipe(retry(3), catchError(this.handleError<Order[]>('getOrders', []))
       );
   }
   /**
