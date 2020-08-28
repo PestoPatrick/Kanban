@@ -1,4 +1,4 @@
-<div class="task-container" cdkDrag>
+<div class="task-container" cdkDrag (click)="openOrder()">
   <div class="task">
     <div class="custom-drag-placeholder" *cdkDragPlaceholder></div>
     <p>Task: {{order.Name}}</p>

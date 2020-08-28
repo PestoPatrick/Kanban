@@ -13,13 +13,17 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrderDetailsComponent,
     OrderColumnsComponent,
+    OrderDetailsComponent,
     OrdersComponent,
   ],
   imports: [
@@ -28,7 +32,11 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     DragDropModule,
     HttpClientModule,
     ScrollingModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatDialogModule,
+    MatButtonModule,
+    BrowserAnimationsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
