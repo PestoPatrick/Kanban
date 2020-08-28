@@ -3,15 +3,12 @@ import { Order } from '../order';
 import { OrderService } from '../order.service';
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { ChangeDetectionStrategy, ViewEncapsulation } from '@angular/core';
 import { observable, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-order-columns',
   templateUrl: './order-columns.component.html',
   styleUrls: ['./order-columns.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class OrderColumnsComponent implements OnInit {
   ordersJSON = [];
@@ -104,6 +101,7 @@ export class OrderColumnsComponent implements OnInit {
             this.completed.push(this.ordersJSON[i]);
           }
         }
+        console.log(this.ordersJSON);
       });
   }
   // can do the assigning of orders here instead of
@@ -123,7 +121,7 @@ export class OrderColumnsComponent implements OnInit {
 
   ngOnInit() {
     this.getOrders();
-    console.log(this.ordersJSON)
+    console.log(this.ordersJSON);
 
   }
 }

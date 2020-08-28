@@ -20,8 +20,7 @@
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
-              0 8px 10px 1px rgba(0, 0, 0, 0.14),
-              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 
 .board {
@@ -33,14 +32,14 @@
   min-height: 0;
 
   .board-bar {
-      background: rgba(gray, 0.5);
-      padding: 8px 15px;
+    background: rgba(gray, 0.5);
+    padding: 8px 15px;
 
-      .board-name {
-          font-size: 20px;
-          font-weight: bold;
-          color: #333333;
-      }
+    .board-name {
+      font-size: 20px;
+      font-weight: bold;
+      color: #333333;
+    }
   }
 }
 
