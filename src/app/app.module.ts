@@ -15,6 +15,7 @@ import { RouterModule } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -35,10 +36,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatProgressSpinnerModule,
     MatDialogModule,
     MatButtonModule,
+    MatFormFieldModule,
     BrowserAnimationsModule
 
   ],
   providers: [],
   bootstrap: [AppComponent],
+  entryComponents: [OrderDetailsComponent]
 })
 export class AppModule { }

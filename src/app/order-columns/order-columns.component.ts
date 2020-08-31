@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Order } from '../order';
 import { OrderService } from '../order.service';
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { observable, Observable } from 'rxjs';
+import { InvokeFunctionExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-order-columns',
@@ -11,6 +12,7 @@ import { observable, Observable } from 'rxjs';
   styleUrls: ['./order-columns.component.scss'],
 })
 export class OrderColumnsComponent implements OnInit {
+
   ordersJSON = [];
 
   ordered = [];
