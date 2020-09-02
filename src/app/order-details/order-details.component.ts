@@ -15,10 +15,10 @@ export class OrderDetailsComponent {
 
   constructor(
     public dialogRef: MatDialogRef<OrderDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public data) { }
+    @Inject(MAT_DIALOG_DATA) public data: Order) { }
 
 
-  onNoClick(): void {
+  onCloseClick(): void {
     this.dialogRef.close();
   }
 

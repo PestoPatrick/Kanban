@@ -15,24 +15,9 @@ export class OrdersComponent implements OnInit {
 
   constructor(private dialog: MatDialog) { }
 
-  // openOrder(): void {
-
-  //   const dialogConfig = new MatDialogConfig();
-
-  //   dialogConfig.autoFocus = true;
-  //   dialogConfig.disableClose = false;
-  //   dialogConfig.height = '25%';
-  //   dialogConfig.width = '25%';
-
-  //   this.dialog.open(OrderDetailsComponent, dialogConfig);
-
-  //   // const modalDialog = this.dialog.open(OrderDetailsComponent, dialogRef)
-
-  // }
-
   openOrder() {
     const dialogRef = this.dialog.open(OrderDetailsComponent, {
-      width: '33%', height: '33%', autoFocus: true
+      width: '45%', height: '33%', autoFocus: true
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -42,5 +27,7 @@ export class OrdersComponent implements OnInit {
 
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+  }
 }

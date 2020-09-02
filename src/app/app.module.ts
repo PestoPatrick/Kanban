@@ -16,6 +16,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
@@ -37,8 +38,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatDialogModule,
     MatButtonModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
-
+    BrowserAnimationsModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent],
