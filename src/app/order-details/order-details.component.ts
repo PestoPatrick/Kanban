@@ -14,8 +14,7 @@ export class OrderDetailsComponent {
 
 
   constructor(
-    public dialogRef: MatDialogRef<OrderDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Order) { }
+    public dialogRef: MatDialogRef<OrderDetailsComponent>) { }
 
 
   onCloseClick(): void {
