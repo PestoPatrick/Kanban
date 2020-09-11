@@ -13,11 +13,13 @@ export class OrderDetailsComponent {
   @Input() description: string;
 
 
+
   constructor(public dialogRef: MatDialogRef<OrderDetailsComponent>) { }
 
 
   onCloseClick() {
     this.dialogRef.close();
+    console.log(this.dialogRef)
   }
 
   ngOnInit(): void {

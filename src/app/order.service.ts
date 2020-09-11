@@ -9,13 +9,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OrderService {
   private OrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/all';
+  private promiseResult: any;
 
   constructor(private http: HttpClient) { }
 
-  getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>(this.OrdersUrl)
-      .pipe(retry(3), catchError(this.handleError<Order[]>('getOrders', []))
-      );
+  async getOrders() {
+    return await this.http.get<Order[]>(this.OrdersUrl).toPromise()
+    // .pipe(retry(3), catchError(this.handleError<Order[]>('getOrders', []))
+
 
 
   }
