@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OrderService {
   private OrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/all';
-  private promiseResult: any;
+
 
   constructor(private http: HttpClient) { }
 

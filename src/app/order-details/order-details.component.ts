@@ -14,7 +14,7 @@ export class OrderDetailsComponent {
 
 
 
-  constructor(public dialogRef: MatDialogRef<OrderDetailsComponent>) { }
+  constructor(public dialogRef: MatDialogRef<OrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public orderinfo) { }
 
 
   onCloseClick() {
@@ -22,6 +22,13 @@ export class OrderDetailsComponent {
     console.log(this.dialogRef)
   }
 
-  ngOnInit(): void {
+  onCloseSave() {
+    this.dialogRef.close();
+    console.log(this.dialogRef)
   }
+
+  ngOnInit() {
+    console.log(this.orderinfo)
+  }
+
 }

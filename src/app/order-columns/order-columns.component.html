@@ -148,17 +148,5 @@
       </div>
     </div>
 
-    <div class="board-column">
-      <div class="column-title">
-        <div class="column-completed">
-          Completed
-        </div>
-      </div>
-      <div class="task-area" (cdkDropListDropped)="drop($event)" *ngIf="orders2" cdkDropList
-        [cdkDropListData]="orders2">
-        <app-orders [order]="order" *ngFor="let order of orders2">{{order}}</app-orders>
-      </div>
-    </div>
-
   </div>
 </div>
