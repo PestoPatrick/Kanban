@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { ReactiveFormsModule } from '@angular/forms';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrderColumnsComponent } from './order-columns/order-columns.component';
@@ -40,7 +41,8 @@ import { MatInputModule } from '@angular/material/input'
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
-    MatInputModule
+    MatInputModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
