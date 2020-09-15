@@ -1,5 +1,5 @@
-<h1 mat-dialog-title>Form title</h1>
 <mat-dialog-content>
+  <h1 mat-dialog-title>Form title</h1>
   <p class="para">
     <mat-form-field>
       <mat-label> {{orderinfo?.orderinfo.Name}} </mat-label>
@@ -66,9 +66,9 @@
     <mat-checkbox class="checkbox">Collection</mat-checkbox>
     <mat-checkbox class="checkbox">Post</mat-checkbox>
   </section>
-</mat-dialog-content>
+  <div mat-dialog-actions>
+    <button mat-button matDialogClose (click)="onCloseClick()">Close</button>
+    <button mat-button (click)="onCloseSave()">Save</button>
+  </div>
 
-<div mat-dialog-actions>
-  <button mat-button matDialogClose (click)="onCloseClick()">Close</button>
-  <button mat-button (click)="onCloseSave()">Save</button>
-</div>
+</mat-dialog-content>

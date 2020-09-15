@@ -17,7 +17,7 @@ export class OrdersComponent implements OnInit {
 
   openOrder() {
     const dialogRef = this.dialog.open(OrderDetailsComponent, {
-      width: '45%', height: '33%', autoFocus: true, data: { orderinfo: this.order }
+      width: '45%', height: '45%', autoFocus: true, data: { orderinfo: this.order }
     });
 
 
