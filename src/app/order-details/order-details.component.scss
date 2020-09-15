@@ -17,6 +17,6 @@
   margin-bottom: 10px;
 }
 
-// ::ng-deep .mat-dialog-content {
-//   background-color: white;
-// }
+::ng-deep .mat-dialog-content {
+  overflow: visible;
+}
