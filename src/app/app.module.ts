@@ -42,7 +42,7 @@ import { MatInputModule } from '@angular/material/input'
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatInputModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
