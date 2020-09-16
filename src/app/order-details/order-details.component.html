@@ -1,74 +1,76 @@
+<h1 mat-dialog-title>Order Details</h1>
 <mat-dialog-content>
-  <h1 mat-dialog-title>Form title</h1>
-  <p class="para">
-    <mat-form-field>
-      <mat-label> {{orderinfo?.orderinfo.Name}} </mat-label>
-      <input matInput placeholder="Name" formControlName="orderName" />
-    </mat-form-field>
-  </p>
+  <form [formGroup]="orderForm">
 
-  <p class="para">
-    <mat-form-field>
-      <mat-label> {{orderinfo?.orderinfo.Date}} </mat-label>
-      <input matInput placeholder="Date" formControlName="orderDate" />
-    </mat-form-field>
-  </p>
-  <p class="para">
-    <mat-form-field>
-      <mat-label> Items </mat-label>
-      <input matInput placeholder="Items" formControlName="orderItems" />
-    </mat-form-field>
-  </p>
+    <p class="para">
+      <mat-form-field>
+        <mat-label> {{orderinfo?.orderinfo.Name}} </mat-label>
+        <input matInput placeholder="Name" formControlName="orderName" />
+      </mat-form-field>
+    </p>
 
-  <p class="para">
-    <mat-form-field>
-      <mat-label> Design </mat-label>
-      <input matInput placeholder="Design" formControlName="orderDesign" />
-    </mat-form-field>
-  </p>
+    <p class="para">
+      <mat-form-field>
+        <mat-label> {{orderinfo?.orderinfo.Date}} </mat-label>
+        <input matInput placeholder="Date" formControlName="orderDate" />
+      </mat-form-field>
+    </p>
+    <p class="para">
+      <mat-form-field>
+        <mat-label> Items </mat-label>
+        <input matInput placeholder="Items" formControlName="orderItems" />
+      </mat-form-field>
+    </p>
 
-  <p class="para">
-    <mat-form-field>
-      <mat-label> Colours </mat-label>
-      <input matInput placeholder="Colours" formControlName="orderColours" />
-    </mat-form-field>
-  </p>
+    <p class="para">
+      <mat-form-field>
+        <mat-label> Design </mat-label>
+        <input matInput placeholder="Design" formControlName="orderDesign" />
+      </mat-form-field>
+    </p>
 
-  <p class="para">
-    <mat-form-field>
-      <mat-label> Address </mat-label>
-      <input matInput placeholder="Address" formControlName="orderAddress" />
-    </mat-form-field>
-  </p>
+    <p class="para">
+      <mat-form-field>
+        <mat-label> Colours </mat-label>
+        <input matInput placeholder="Colours" formControlName="orderColours" />
+      </mat-form-field>
+    </p>
 
-  <p class="para">
-    <mat-form-field>
-      <mat-label> Amount</mat-label>
-      <input matInput class="Amount" placeholder="Amount" />
-    </mat-form-field>
-  </p>
+    <p class="para">
+      <mat-form-field>
+        <mat-label> Address </mat-label>
+        <input matInput placeholder="Address" formControlName="orderAddress" />
+      </mat-form-field>
+    </p>
 
-  <section class="Checkboxes">
-    <h2>Ordered From</h2>
-    <mat-checkbox class="checkbox">FB</mat-checkbox>
-    <mat-checkbox class="checkbox">Instagram</mat-checkbox>
-    <mat-checkbox class="checkbox">Email</mat-checkbox>
-  </section>
-  <section class="Checkboxes">
-    <h2>Payment Method</h2>
-    <mat-checkbox class="checkbox">Bank Transfer</mat-checkbox>
-    <mat-checkbox class="checkbox">PayPal</mat-checkbox>
-    <mat-checkbox class="checkbox">Cash</mat-checkbox>
-  </section>
-  <section class="Checkboxes">
-    <h2>Delivery Method</h2>
-    <mat-checkbox class="checkbox">Delivery</mat-checkbox>
-    <mat-checkbox class="checkbox">Collection</mat-checkbox>
-    <mat-checkbox class="checkbox">Post</mat-checkbox>
-  </section>
-  <div mat-dialog-actions>
-    <button mat-button matDialogClose (click)="onCloseClick()">Close</button>
-    <button mat-button (click)="onCloseSave()">Save</button>
-  </div>
+    <p class="para">
+      <mat-form-field>
+        <mat-label> Amount</mat-label>
+        <input matInput class="Amount" placeholder="Amount" formControlName="orderAmount" />
+      </mat-form-field>
+    </p>
 
+    <section class="Checkboxes">
+      <h2>Ordered From</h2>
+      <mat-checkbox class="checkbox">FB</mat-checkbox>
+      <mat-checkbox class="checkbox">Instagram</mat-checkbox>
+      <mat-checkbox class="checkbox">Email</mat-checkbox>
+    </section>
+    <section class="Checkboxes">
+      <h2>Payment Method</h2>
+      <mat-checkbox class="checkbox">Bank Transfer</mat-checkbox>
+      <mat-checkbox class="checkbox">PayPal</mat-checkbox>
+      <mat-checkbox class="checkbox">Cash</mat-checkbox>
+    </section>
+    <section class="Checkboxes">
+      <h2>Delivery Method</h2>
+      <mat-checkbox class="checkbox">Delivery</mat-checkbox>
+      <mat-checkbox class="checkbox">Collection</mat-checkbox>
+      <mat-checkbox class="checkbox">Post</mat-checkbox>
+    </section>
+    <div mat-dialog-actions>
+      <button mat-button matDialogClose (click)="onCloseClick()">Close</button>
+      <button mat-button (click)="onCloseSave()">Save</button>
+    </div>
+  </form>
 </mat-dialog-content>

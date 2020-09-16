@@ -41,9 +41,10 @@
   min-width: 50px;
 }
 
-// .mat-spinner
-//   .mat-progress-spinner
-//   .mat-primary
-//   .mat-progress-spinner-indeterminate-animation {
-
-// }
+.floating-action-button {
+  top: auto !important;
+  right: auto !important;
+  bottom: 20px !important;
+  left: 20px !important;
+  position: fixed !important;
+}

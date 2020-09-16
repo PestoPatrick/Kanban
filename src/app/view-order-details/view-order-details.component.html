@@ -1,0 +1,45 @@
+<h1>Order Details</h1>
+
+<h2 class="mat-h2">Name:</h2>
+<h4 class="mat-h4">{{orderinfo?.orderinfo.Name}}</h4>
+
+<h2 class="mat-h2">Date:</h2>
+<h4>{{orderinfo?.orderinfo.Date}}</h4>
+
+<h2 class="mat-h2">Items:</h2>
+<h4>{{orderinfo?.orderinfo.Item}}</h4>
+
+<h2 class="mat-h2">Design:</h2>
+<h4>{{orderinfo?.orderinfo.Design}}</h4>
+
+<h2 class="mat-h2">Colours:</h2>
+<h4>{{orderinfo?.orderinfo.Colour}}</h4>
+
+<h2 class="mat-h2">Address:</h2>
+<h4>{{orderinfo?.orderinfo.Address}}</h4>
+
+<h2 class="mat-h2">Amount:</h2>
+<h4>{{orderinfo?.orderinfo.Amount}}</h4>
+
+<section class="Checkboxes">
+  <h2>Ordered From</h2>
+  <mat-checkbox class="checkbox">FB</mat-checkbox>
+  <mat-checkbox class="checkbox">Instagram</mat-checkbox>
+  <mat-checkbox class="checkbox">Email</mat-checkbox>
+</section>
+<section class="Checkboxes">
+  <h2>Payment Method</h2>
+  <mat-checkbox class="checkbox">Bank Transfer</mat-checkbox>
+  <mat-checkbox class="checkbox">PayPal</mat-checkbox>
+  <mat-checkbox class="checkbox">Cash</mat-checkbox>
+</section>
+<section class="Checkboxes">
+  <h2>Delivery Method</h2>
+  <mat-checkbox class="checkbox">Delivery</mat-checkbox>
+  <mat-checkbox class="checkbox">Collection</mat-checkbox>
+  <mat-checkbox class="checkbox">Post</mat-checkbox>
+</section>
+<div mat-dialog-actions>
+  <button mat-button matDialogClose (click)="onCloseClick()">Close</button>
+  <button mat-button (click)="onCloseSave()">Save</button>
+</div>

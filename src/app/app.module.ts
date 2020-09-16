@@ -20,6 +20,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input'
+import { MatIconModule } from '@angular/material/icon';
+import { ViewOrderDetailsComponent } from './view-order-details/view-order-details.component'
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { MatInputModule } from '@angular/material/input'
     OrderColumnsComponent,
     OrderDetailsComponent,
     OrdersComponent,
+    ViewOrderDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,9 @@ import { MatInputModule } from '@angular/material/input'
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatInputModule,
-    // ReactiveFormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

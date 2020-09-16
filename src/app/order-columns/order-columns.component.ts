@@ -1,10 +1,12 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { Order } from '../order';
 import { OrderService } from '../order.service';
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { observable, Observable } from 'rxjs';
 import { InvokeFunctionExpr } from '@angular/compiler';
+import { Container } from '@angular/compiler/src/i18n/i18n_ast';
+import { __values } from 'tslib';
 
 @Component({
   selector: 'app-order-columns',
@@ -14,6 +16,7 @@ import { InvokeFunctionExpr } from '@angular/compiler';
 export class OrderColumnsComponent implements OnInit {
 
   constructor(private orderService: OrderService) { }
+
 
   ordersJSON = [];
 
@@ -30,15 +33,6 @@ export class OrderColumnsComponent implements OnInit {
   posted = [];
   delivered = [];
   completed = [];
-
-
-  orders2 = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog',
-  ];
 
   orders3 = [
     'More random tasks',
@@ -63,8 +57,10 @@ export class OrderColumnsComponent implements OnInit {
           event.container.data,
           event.previousIndex,
           event.currentIndex
-        )
-      );
+        ))
+      let i = event.currentIndex
+      event.container.data[i]['State'] = event.container.data
+      console.log(event.container.data[i])
     }
   }
 
@@ -119,13 +115,16 @@ export class OrderColumnsComponent implements OnInit {
     // console.log(this.completed);
   }
 
+  onClickNewOrder() {
+    console.log('new order clicked')
+  }
 
   ngOnInit() {
     let result = this.fetchAndSort();
     // this.getOrders();
     console.log(result);
-
   }
+
 }
 
 
