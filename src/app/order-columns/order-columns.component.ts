@@ -163,12 +163,13 @@ export class OrderColumnsComponent implements OnInit {
   onClickNewOrder() {
     console.log('new order clicked')
     const dialogRef = this.dialog.open(OrderDetailsComponent, {
-      width: '45%', height: '45%', autoFocus: false, data: { neworder: this.neworder }
+      width: '45%', height: '45%', autoFocus: false, data: { neworderinfo: this.neworder }
     })
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog was closed. returned ' + result.Name)
+      console.log('dialog was closed. returned ' + result.values)
       this.neworder = result;
+      return result
       console.log(this.neworder?.neworder.Name)
     });
   }

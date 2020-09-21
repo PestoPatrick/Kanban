@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { OrderColumnsComponent } from '../order-columns/order-columns.component';
 import { Order } from '../order';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatRadioModule } from "@angular/material/radio";
 
 @Component({
   selector: 'app-order-details',
@@ -21,13 +22,22 @@ export class OrderDetailsComponent {
     orderColours: new FormControl(''),
     orderAddress: new FormControl(''),
     orderAmount: new FormControl(''),
+    payment: new FormControl(),
+    socials: new FormControl(),
+    deliverymethod: new FormControl()
 
   })
 
-  constructor(public dialogRef: MatDialogRef<OrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public neworder: Order) { }
+  constructor(public dialogRef: MatDialogRef<OrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public neworderinfo: Order) { }
+
   onCloseClick() {
-    this.dialogRef.close(this.neworder);
+    this.dialogRef.close(this.neworderinfo);
     console.log(this.dialogRef)
+  }
+
+  onSubmit() {
+    console.warn(this.orderForm.value);
+    console.log(this.orderForm.get('payment').value)
   }
 
   onCloseSave() {
@@ -36,7 +46,7 @@ export class OrderDetailsComponent {
   }
 
   ngOnInit() {
-    console.log(this.neworder)
+    console.log(this.neworderinfo)
   }
 
 }
