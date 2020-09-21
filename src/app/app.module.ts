@@ -22,7 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatInputModule } from '@angular/material/input'
 import { MatIconModule } from '@angular/material/icon';
 import { ViewOrderDetailsComponent } from './view-order-details/view-order-details.component'
-
+import { MatRadioModule } from '@angular/material/radio'
 
 @NgModule({
   declarations: [
@@ -48,6 +48,7 @@ import { ViewOrderDetailsComponent } from './view-order-details/view-order-detai
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent],

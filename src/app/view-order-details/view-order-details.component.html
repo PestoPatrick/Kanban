@@ -21,24 +21,15 @@
 <h2 class="mat-h2">Amount:</h2>
 <h4>{{orderinfo?.orderinfo.Amount}}</h4>
 
-<section class="Checkboxes">
-  <h2>Ordered From</h2>
-  <mat-checkbox class="checkbox">FB</mat-checkbox>
-  <mat-checkbox class="checkbox">Instagram</mat-checkbox>
-  <mat-checkbox class="checkbox">Email</mat-checkbox>
-</section>
-<section class="Checkboxes">
-  <h2>Payment Method</h2>
-  <mat-checkbox class="checkbox">Bank Transfer</mat-checkbox>
-  <mat-checkbox class="checkbox">PayPal</mat-checkbox>
-  <mat-checkbox class="checkbox">Cash</mat-checkbox>
-</section>
-<section class="Checkboxes">
-  <h2>Delivery Method</h2>
-  <mat-checkbox class="checkbox">Delivery</mat-checkbox>
-  <mat-checkbox class="checkbox">Collection</mat-checkbox>
-  <mat-checkbox class="checkbox">Post</mat-checkbox>
-</section>
+<h2 class="mat-h2">Payment Method</h2>
+<h4>{{ payMethod }}</h4>
+
+<h2 class="mat-h2">Delivery Method</h2>
+<h4>{{ deliveryMethod }}</h4>
+
+<h2 class="mat-h2">Ordered From</h2>
+<h4>{{ orderedFrom }}</h4>
+
 <div mat-dialog-actions>
   <button mat-button matDialogClose (click)="onCloseClick()">Close</button>
   <button mat-button (click)="onCloseSave()">Save</button>

@@ -3,6 +3,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 import { OrderColumnsComponent } from '../order-columns/order-columns.component';
 import { Order } from '../order';
 import { FormControl, FormGroup } from '@angular/forms';
+import { MatRadioButton } from '@angular/material/radio'
 
 @Component({
   selector: 'app-view-order-details',
@@ -11,10 +12,42 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class ViewOrderDetailsComponent implements OnInit {
   @Input() order: Order;
-
-
+  @Input() orderedFrom: string;
+  @Input() payMethod: string;
+  @Input() deliveryMethod: string;
 
   constructor(public dialogRef: MatDialogRef<ViewOrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public orderinfo) { }
+
+  PayMethod() {
+    if (this.orderinfo.orderinfo.Bank_Transfer == true) {
+      this.payMethod = "Bank Transfer";
+    } else if (this.orderinfo.orderinfo.PayPal == true) {
+      this.payMethod = "PayPal";
+    } else if (this.orderinfo.orderinfo.Cash == true) {
+      this.payMethod = "Cash";
+    }
+  }
+
+  OrderedFrom() {
+    if (this.orderinfo.orderinfo.FB == true) {
+      this.orderedFrom = "FB";
+    } else if (this.orderinfo.orderinfo.Instagram == true) {
+      this.orderedFrom = "Instagram";
+    } else if (this.orderinfo.orderinfo.Email == true) {
+      this.orderedFrom = "Email";
+    }
+  }
+
+  DeliveryMethod() {
+    if (this.orderinfo.orderinfo.Collection == true) {
+      this.deliveryMethod = "Collection";
+    } else if (this.orderinfo.orderinfo.Delivery == true) {
+      this.deliveryMethod = "Delivery";
+    } else if (this.orderinfo.orderinfo.Post == true) {
+      this.deliveryMethod = "Post";
+    }
+  }
+
 
 
   onCloseClick() {
@@ -28,6 +61,10 @@ export class ViewOrderDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.orderinfo)
+    this.PayMethod()
+    this.OrderedFrom()
+    this.DeliveryMethod()
+    console.log(this.orderinfo.orderinfo.Name)
   }
+
 }
