@@ -24,21 +24,19 @@ export class OrderDetailsComponent {
 
   })
 
-  constructor(public dialogRef: MatDialogRef<OrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public orderinfo) { }
-
-
+  constructor(public dialogRef: MatDialogRef<OrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public neworder: Order) { }
   onCloseClick() {
-    this.dialogRef.close();
+    this.dialogRef.close(this.neworder);
     console.log(this.dialogRef)
   }
 
   onCloseSave() {
-    this.dialogRef.close();
+    // this.dialogRef.close();
     console.log(this.dialogRef)
   }
 
   ngOnInit() {
-    console.log(this.orderinfo)
+    console.log(this.neworder)
   }
 
 }

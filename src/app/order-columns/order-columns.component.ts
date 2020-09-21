@@ -5,8 +5,9 @@ import { OrderService } from '../order.service';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { observable, Observable } from 'rxjs';
 import { InvokeFunctionExpr } from '@angular/compiler';
-import { Container } from '@angular/compiler/src/i18n/i18n_ast';
 import { __values } from 'tslib';
+import { MatDialog } from '@angular/material/dialog';
+import { OrderDetailsComponent } from '../order-details/order-details.component';
 
 @Component({
   selector: 'app-order-columns',
@@ -15,8 +16,10 @@ import { __values } from 'tslib';
 })
 export class OrderColumnsComponent implements OnInit {
 
-  constructor(private orderService: OrderService) { }
+  constructor(private orderService: OrderService, public dialog: MatDialog) { }
 
+
+  neworder;
 
   ordersJSON = [];
 
@@ -43,26 +46,68 @@ export class OrderColumnsComponent implements OnInit {
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
-      console.log(
-        moveItemInArray(
-          event.container.data,
-          event.previousIndex,
-          event.currentIndex
-        )
+      moveItemInArray(
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
       );
     } else {
-      console.log(
-        transferArrayItem(
-          event.previousContainer.data,
-          event.container.data,
-          event.previousIndex,
-          event.currentIndex
-        ))
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      )
       let i = event.currentIndex
-      event.container.data[i]['State'] = event.container.data
-      console.log(event.container.data[i])
+      event.container.data[i]['State'] = this.MovingOrders(event.container.id)
+      console.log(event.container.data[i]['State'])
     }
   }
+
+  MovingOrders(id) {
+    switch (id) {
+      case "cdk-drop-list-0": {
+        return "ordered"
+      }
+      case 'cdk-drop-list-1': {
+        return "instock"
+      }
+      case 'cdk-drop-list-2': {
+        return "soaked";
+      }
+      case 'cdk-drop-list-3': {
+        return "tied"
+      }
+      case 'cdk-drop-list-4': {
+        return "dyed"
+      }
+      case 'cdk-drop-list-5': {
+        return "rinsed"
+      }
+      case 'cdk-drop-list-6': {
+        return "washed"
+      }
+      case 'cdk-drop-list-7': {
+        return "dried"
+      }
+      case 'cdk-drop-list-8': {
+        return "ironed"
+      }
+      case 'cdk-drop-list-9': {
+        return "packaged"
+      }
+      case 'cdk-drop-list-10': {
+        return "posted"
+      }
+      case 'cdk-drop-list-11': {
+        return "delivered"
+      }
+      case 'cdk-drop-list-12': {
+        return "completed"
+      }
+    }
+  }
+
 
 
   async getOrders() {
@@ -117,6 +162,15 @@ export class OrderColumnsComponent implements OnInit {
 
   onClickNewOrder() {
     console.log('new order clicked')
+    const dialogRef = this.dialog.open(OrderDetailsComponent, {
+      width: '45%', height: '45%', autoFocus: false, data: { neworder: this.neworder }
+    })
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('dialog was closed. returned ' + result.Name)
+      this.neworder = result;
+      console.log(this.neworder?.neworder.Name)
+    });
   }
 
   ngOnInit() {
