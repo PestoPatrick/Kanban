@@ -1,58 +1,57 @@
 <h1 mat-dialog-title>Order Details</h1>
 <mat-dialog-content>
   <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
-
     <p class="para">
       <mat-form-field>
         <mat-label> Name </mat-label>
-        <input matInput type="text" placeholder="Name" formControlName="orderName" />
+        <input matInput type="text" placeholder="Name" formControlName="orderName" required />
       </mat-form-field>
     </p>
 
     <p class="para">
       <mat-form-field>
         <mat-label> Date </mat-label>
-        <input matInput type="text" placeholder="Date" formControlName="orderDate" />
+        <input matInput type="date" placeholder="Date" formControlName="orderDate" required />
       </mat-form-field>
     </p>
     <p class="para">
       <mat-form-field>
         <mat-label> Items </mat-label>
-        <input matInput type="text" placeholder="Items" formControlName="orderItems" />
+        <input matInput type="text" placeholder="Items" formControlName="orderItems" required />
       </mat-form-field>
     </p>
 
     <p class="para">
       <mat-form-field>
         <mat-label> Design </mat-label>
-        <input matInput type="text" placeholder="Design" formControlName="orderDesign" />
+        <input matInput type="text" placeholder="Design" formControlName="orderDesign" required />
       </mat-form-field>
     </p>
 
     <p class="para">
       <mat-form-field>
         <mat-label> Colours </mat-label>
-        <input matInput type="text" placeholder="Colours" formControlName="orderColours" />
+        <input matInput type="text" placeholder="Colours" formControlName="orderColours" required />
       </mat-form-field>
     </p>
 
     <p class="para">
       <mat-form-field>
         <mat-label> Address </mat-label>
-        <input matInput type="text" placeholder="Address" formControlName="orderAddress" />
+        <input matInput type="text" placeholder="Address" formControlName="orderAddress" required />
       </mat-form-field>
     </p>
 
     <p class="para">
       <mat-form-field>
         <mat-label> Amount</mat-label>
-        <input matInput type="text" class="Amount" placeholder="Amount" formControlName="orderAmount" />
+        <input matInput type="text" class="Amount" placeholder="Amount" formControlName="orderAmount" required />
       </mat-form-field>
     </p>
 
     <section class="Checkboxes">
       <h2>Ordered From</h2>
-      <mat-radio-group formControlName="socials">
+      <mat-radio-group formControlName="socials" required>
         <mat-radio-button value="FB" class="checkbox">FB</mat-radio-button>
         <mat-radio-button value="Instagram" class="checkbox">Instagram</mat-radio-button>
         <mat-radio-button value="Email" class="checkbox">Email</mat-radio-button>
@@ -73,13 +72,15 @@
       <h2>Delivery Method</h2>
       <mat-radio-group formControlName="deliverymethod">
         <mat-radio-button value="Delivery" class="checkbox">Delivery</mat-radio-button>
-        <mat-radio-button value="Collection" class="checkbox">Collection</mat-radio-button>
+        <mat-radio-button value="Collection" class="checkbox">
+          Collection
+        </mat-radio-button>
         <mat-radio-button value="Post" class="checkbox">Post</mat-radio-button>
       </mat-radio-group>
     </section>
     <div mat-dialog-actions>
-      <button mat-button matDialogClose (click)="onCloseClick()">Close</button>
-      <button mat-button (click)="onCloseSave()">Save</button>
+      <button mat-button color="warn" matDialogClose (click)="onClose()">Close</button>
+      <button mat-button color="primary" [disabled]="!orderForm.valid" (click)="onSubmit()">Save</button>
     </div>
   </form>
 </mat-dialog-content>

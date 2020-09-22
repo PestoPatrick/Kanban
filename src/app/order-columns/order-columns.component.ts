@@ -153,11 +153,8 @@ export class OrderColumnsComponent implements OnInit {
 
   async fetchAndSort() {
     await this.getOrders();
-    // console.log(this.ordersJSON);
     this.sortOrders();
     return this.ordersJSON
-    // console.log(this.ordersJSON);
-    // console.log(this.completed);
   }
 
   onClickNewOrder() {
@@ -167,16 +164,14 @@ export class OrderColumnsComponent implements OnInit {
     })
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog was closed. returned ' + result.values)
+      console.log('dialog was closed. returned ' + result)
       this.neworder = result;
-      return result
-      console.log(this.neworder?.neworder.Name)
+      console.log(this.neworder['socials'])
     });
   }
 
   ngOnInit() {
     let result = this.fetchAndSort();
-    // this.getOrders();
     console.log(result);
   }
 

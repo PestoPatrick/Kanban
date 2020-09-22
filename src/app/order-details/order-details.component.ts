@@ -1,9 +1,7 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { OrderColumnsComponent } from '../order-columns/order-columns.component';
+import { Component, Inject, Input } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Order } from '../order';
-import { FormControl, FormGroup } from '@angular/forms';
-import { MatRadioModule } from "@angular/material/radio";
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-order-details',
@@ -12,41 +10,34 @@ import { MatRadioModule } from "@angular/material/radio";
 })
 export class OrderDetailsComponent {
 
-  @Input() description: string;
+  @Input() orderinfo: string;
 
-  orderForm = new FormGroup({
-    orderName: new FormControl(''),
-    orderDate: new FormControl(''),
-    orderItems: new FormControl(''),
-    orderDesign: new FormControl(''),
-    orderColours: new FormControl(''),
-    orderAddress: new FormControl(''),
-    orderAmount: new FormControl(''),
-    payment: new FormControl(),
-    socials: new FormControl(),
-    deliverymethod: new FormControl()
-
+  orderForm = this.fb.group({
+    orderName: ['', Validators.required],
+    orderDate: ['', Validators.required],
+    orderItems: ['', Validators.required],
+    orderDesign: ['', Validators.required],
+    orderColours: ['', Validators.required],
+    orderAddress: ['', Validators.required],
+    orderAmount: ['', Validators.required],
+    payment: ['', Validators.required],
+    socials: ['', Validators.required],
+    deliverymethod: ['', Validators.required]
   })
 
-  constructor(public dialogRef: MatDialogRef<OrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public neworderinfo: Order) { }
-
-  onCloseClick() {
-    this.dialogRef.close(this.neworderinfo);
-    console.log(this.dialogRef)
-  }
+  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<OrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public neworderinfo: Order) { }
 
   onSubmit() {
-    console.warn(this.orderForm.value);
-    console.log(this.orderForm.get('payment').value)
+    this.dialogRef.close(this.orderForm.value);
+    console.log(this.orderForm.get('orderName').value)
   }
 
-  onCloseSave() {
-    // this.dialogRef.close();
-    console.log(this.dialogRef)
+  onClose() {
+    this.dialogRef.close();
   }
 
   ngOnInit() {
-    console.log(this.neworderinfo)
+
   }
 
 }
