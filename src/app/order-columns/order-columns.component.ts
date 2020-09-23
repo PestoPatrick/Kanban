@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { Order } from '../order';
 import { OrderService } from '../order.service';
+import { UpdateOrderService } from '../update-order.service'
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { observable, Observable } from 'rxjs';
@@ -8,7 +9,6 @@ import { InvokeFunctionExpr } from '@angular/compiler';
 import { __values } from 'tslib';
 import { MatDialog } from '@angular/material/dialog';
 import { OrderDetailsComponent } from '../order-details/order-details.component';
-
 @Component({
   selector: 'app-order-columns',
   templateUrl: './order-columns.component.html',
@@ -16,7 +16,7 @@ import { OrderDetailsComponent } from '../order-details/order-details.component'
 })
 export class OrderColumnsComponent implements OnInit {
 
-  constructor(private orderService: OrderService, public dialog: MatDialog) { }
+  constructor(private orderService: OrderService, public dialog: MatDialog, private updateOrderService: UpdateOrderService) { }
 
 
   neworder;
@@ -61,6 +61,9 @@ export class OrderColumnsComponent implements OnInit {
       let i = event.currentIndex
       event.container.data[i]['State'] = this.MovingOrders(event.container.id)
       console.log(event.container.data[i]['State'])
+      console.log(event.container.data[i])
+      this.updateOrder(event.container.data[i])
+
     }
   }
 
@@ -109,6 +112,10 @@ export class OrderColumnsComponent implements OnInit {
   }
 
 
+
+  async updateOrder(order) {
+    await this.updateOrderService.updateState(order)
+  }
 
   async getOrders() {
     this.ordersJSON = await this.orderService.getOrders()
