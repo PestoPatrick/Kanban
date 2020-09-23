@@ -62,7 +62,7 @@ export class OrderColumnsComponent implements OnInit {
       event.container.data[i]['State'] = this.MovingOrders(event.container.id)
       console.log(event.container.data[i]['State'])
       console.log(event.container.data[i])
-      this.updateOrder(event.container.data[i])
+      this.updateOrder(event.container.data[i]).then().catch(err => { console.log(err) })
 
     }
   }
