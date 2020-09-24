@@ -15,6 +15,7 @@ export class ViewOrderDetailsComponent implements OnInit {
   @Input() orderedFrom: string;
   @Input() payMethod: string;
   @Input() deliveryMethod: string;
+  @Input() edit = false
 
   constructor(public dialogRef: MatDialogRef<ViewOrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public orderinfo) { }
 

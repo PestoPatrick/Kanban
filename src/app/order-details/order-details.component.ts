@@ -10,7 +10,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class OrderDetailsComponent {
 
-  @Input() orderinfo: string;
+
 
   orderForm = this.fb.group({
     orderName: ['', Validators.required],
@@ -29,7 +29,7 @@ export class OrderDetailsComponent {
 
   onSubmit() {
     this.dialogRef.close(this.orderForm.value);
-    console.log(this.orderForm.get('orderName').value)
+    console.log(this.orderForm.value)
   }
 
   onClose() {

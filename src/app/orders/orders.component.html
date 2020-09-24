@@ -1,6 +1,7 @@
-<div class="task-container" cdkDrag (click)='openOrder()'>
+<div click-stop-propagation class="task-container" cdkDrag (click)='openOrder()'>
   <div class="task">
     <div class="custom-drag-placeholder" *cdkDragPlaceholder></div>
-    <p>Order: {{order?.Name}}</p>
+    <p class="order-text">Order: {{order?.Name}}</p>
+    <button click-stop-propagation mat-button (click)="onEditClick()">Edit</button>
   </div>
 </div>

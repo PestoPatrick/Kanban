@@ -19,10 +19,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { ViewOrderDetailsComponent } from './view-order-details/view-order-details.component'
-import { MatRadioModule } from '@angular/material/radio'
+import { MatRadioModule } from '@angular/material/radio';
+import { EditOrderComponent } from './edit-order/edit-order.component';
+import { ClickStopPropagationDirective } from './click-stop-propagation.directive';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { MatRadioModule } from '@angular/material/radio'
     OrderDetailsComponent,
     OrdersComponent,
     ViewOrderDetailsComponent,
+    EditOrderComponent,
+    ClickStopPropagationDirective,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,6 @@ import { MatRadioModule } from '@angular/material/radio'
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [OrderDetailsComponent, ViewOrderDetailsComponent]
+  entryComponents: [OrderDetailsComponent, ViewOrderDetailsComponent, EditOrderComponent]
 })
 export class AppModule { }

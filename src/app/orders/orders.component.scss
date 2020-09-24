@@ -17,6 +17,17 @@
     0 3px 14px 2px rgba(0, 0, 0, 0.05);
 }
 
+.task .order-text {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.task button {
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: flex-end;
+}
+
 .custom-drag-placeholder {
   background: #ccc;
   border: dotted 3px #999;

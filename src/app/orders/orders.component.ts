@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { EditOrderComponent } from '../edit-order/edit-order.component';
 import { Order } from '../order';
-import { OrderDetailsComponent } from '../order-details/order-details.component';
 import { ViewOrderDetailsComponent } from '../view-order-details/view-order-details.component';
 
 @Component({
@@ -22,8 +22,14 @@ export class OrdersComponent implements OnInit {
     });
 
 
+
   }
 
+  onEditClick() {
+    const dialogRef = this.dialog.open(EditOrderComponent, {
+      width: '45%', height: '45%', autoFocus: false, data: { orderinfo: this.order }
+    });
+  }
   ngOnInit(): void {
 
   }

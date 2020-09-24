@@ -3,6 +3,7 @@
 
     <mat-spinner *ngIf="ordersJSON.length === 0"></mat-spinner>
 
+    <h1 class="mat-h1" *ngIf="errorMessage">{{errorMessage}}</h1>
 
 
     <div class="board-column">

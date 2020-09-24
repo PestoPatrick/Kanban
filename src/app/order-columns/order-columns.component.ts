@@ -17,7 +17,7 @@ import { OrderDetailsComponent } from '../order-details/order-details.component'
 export class OrderColumnsComponent implements OnInit {
 
   constructor(private orderService: OrderService, public dialog: MatDialog, private updateOrderService: UpdateOrderService) { }
-
+  @Input() errorMessage: object;
 
   neworder;
 
@@ -62,7 +62,10 @@ export class OrderColumnsComponent implements OnInit {
       event.container.data[i]['State'] = this.MovingOrders(event.container.id)
       console.log(event.container.data[i]['State'])
       console.log(event.container.data[i])
-      this.updateOrder(event.container.data[i]).then().catch(err => { console.log(err) })
+      this.updateOrder(event.container.data[i]).then().catch(err => {
+        this.errorMessage = { error: err }
+        console.log(err)
+      })
 
     }
   }

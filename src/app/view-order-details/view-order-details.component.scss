@@ -1,4 +1,4 @@
-.checkbox {
+.radiobutton {
   margin-left: 10px;
 }
 
@@ -8,11 +8,15 @@
   margin-bottom: 0px;
 }
 
-.Checkboxes h2 {
+.radiobuttongroup h2 {
   margin-bottom: 0px;
   margin-top: 10px;
 }
 
-.Checkboxes {
+.radiobuttongroup {
   margin-bottom: 10px;
+}
+
+::ng-deep .mat-dialog-content {
+  overflow: visible;
 }
