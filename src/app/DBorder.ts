@@ -1,5 +1,5 @@
 export interface DBOrder {
-  id: string;
+  _id: string;
   Name: string;
   Date: string;
   FB: boolean;
