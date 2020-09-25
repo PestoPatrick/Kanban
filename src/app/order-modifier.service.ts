@@ -46,7 +46,7 @@ export class OrderModifierService {
     let DBSubmission = {
       _id: orderTo._id,
       Name: orderTo.Name,
-      Date: orderTo.Date,
+      Date: new Date(orderTo.Date).toISOString(),
       FB: FB,
       Instagram: Instagram,
       Email: Email,
