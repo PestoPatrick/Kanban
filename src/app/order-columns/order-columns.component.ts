@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
 import { OrderService } from '../order.service';
-import { UpdateOrderService } from '../update-order.service'
+import { UpdateOrderService } from '../update-order.service';
+import { FormOrder } from '../FormOrder'
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { observable, Observable } from 'rxjs';
@@ -18,7 +19,7 @@ export class OrderColumnsComponent implements OnInit {
   constructor(private orderService: OrderService, public dialog: MatDialog, private updateOrderService: UpdateOrderService) { }
   @Input() errorMessage: object;
 
-  neworder;
+  neworder: FormOrder;
 
   ordersJSON = [];
 

@@ -3,7 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { OrderColumnsComponent } from '../order-columns/order-columns.component';
 import { DBOrder } from '../DBorder';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatRadioButton } from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 @Component({
   selector: 'app-edit-order',
   templateUrl: './edit-order.component.html',
@@ -15,6 +15,8 @@ export class EditOrderComponent implements OnInit {
 
   // next need to make service with a function to convert order to what it needs to look like to be used in the form such as time and text for payment method etc
   // and then make another function that converts it back to the database format of boolean options and time format
+
+
 
   editOrderForm = this.fb.group({
     orderName: [this.orderinfo.orderinfo.Name, Validators.required],
@@ -28,6 +30,7 @@ export class EditOrderComponent implements OnInit {
     socials: [this.orderinfo.orderinfo.socials, Validators.required],
     deliverymethod: [this.orderinfo.orderinfo.deliverymethod, Validators.required]
   })
+
 
 
   onSubmit() { }

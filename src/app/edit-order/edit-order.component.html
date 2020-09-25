@@ -26,6 +26,7 @@
     </mat-form-field>
 
     <p class="para">
+      {{orderinfo?.orderinfo.Design}}
     </p>
     <mat-form-field>
       <mat-label> Design </mat-label>
@@ -33,6 +34,7 @@
     </mat-form-field>
 
     <p class="para">
+      {{orderinfo?.orderinfo.Colour}}
     </p>
     <mat-form-field>
       <mat-label> Colours </mat-label>
@@ -40,6 +42,7 @@
     </mat-form-field>
 
     <p class="para">
+      {{orderinfo?.orderinfo.Address}}
     </p>
     <mat-form-field>
       <mat-label> Address </mat-label>
@@ -47,6 +50,7 @@
     </mat-form-field>
 
     <p class="para">
+      {{orderinfo?.orderinfo.Amount}}
     </p>
     <mat-form-field>
       <mat-label> Amount</mat-label>
@@ -55,6 +59,7 @@
 
     <section class="radiobuttongroup">
       <h2>Ordered From</h2>
+      <p class="para">{{orderinfo?.orderinfo.socials}}</p>
       <mat-radio-group formControlName="socials" required>
         <mat-radio-button value="FB" class="radiobutton">FB</mat-radio-button>
         <mat-radio-button value="Instagram" class="radiobutton">Instagram</mat-radio-button>
@@ -64,6 +69,7 @@
 
     <section class="radiobuttongroup">
       <h2>Payment Method</h2>
+      <p class="para">{{orderinfo?.orderinfo.payment}}</p>
       <mat-radio-group formControlName="payment">
         <mat-radio-button value="Bank_Transfer" class="radiobutton">Bank Transfer
         </mat-radio-button>
@@ -74,6 +80,7 @@
 
     <section class="radiobuttongroup">
       <h2>Delivery Method</h2>
+      <p class="para">{{orderinfo.orderinfo.deliverymethod}}</p>
       <mat-radio-group formControlName="deliverymethod">
         <mat-radio-button value="Delivery" class="radiobutton">Delivery</mat-radio-button>
         <mat-radio-button value="Collection" class="radiobutton">
