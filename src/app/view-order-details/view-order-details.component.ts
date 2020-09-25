@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { OrderColumnsComponent } from '../order-columns/order-columns.component';
-import { Order } from '../order';
+import { DBOrder } from '../DBorder';
 import { FormControl, FormGroup } from '@angular/forms';
 import { MatRadioButton } from '@angular/material/radio'
 
@@ -11,7 +11,7 @@ import { MatRadioButton } from '@angular/material/radio'
   styleUrls: ['./view-order-details.component.scss']
 })
 export class ViewOrderDetailsComponent implements OnInit {
-  @Input() order: Order;
+  @Input() order: DBOrder;
   @Input() orderedFrom: string;
   @Input() payMethod: string;
   @Input() deliveryMethod: string;

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Order } from './order';
+import { DBOrder } from './DBorder';
 import { OrderColumn } from './order-column';
 import { OrderService } from './order.service';
 import { Observable } from 'rxjs';

@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EditOrderComponent } from '../edit-order/edit-order.component';
-import { Order } from '../order';
+import { DBOrder } from '../DBorder';
 import { ViewOrderDetailsComponent } from '../view-order-details/view-order-details.component';
 
 @Component({
@@ -11,7 +11,7 @@ import { ViewOrderDetailsComponent } from '../view-order-details/view-order-deta
   styleUrls: ['./orders.component.scss'],
 })
 export class OrdersComponent implements OnInit {
-  @Input() order: Order;
+  @Input() order: DBOrder;
 
 
   constructor(public dialog: MatDialog) { }
@@ -29,6 +29,10 @@ export class OrdersComponent implements OnInit {
     const dialogRef = this.dialog.open(EditOrderComponent, {
       width: '45%', height: '45%', autoFocus: false, data: { orderinfo: this.order }
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+      
+    })
   }
   ngOnInit(): void {
 

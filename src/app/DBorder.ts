@@ -1,4 +1,4 @@
-export interface Order {
+export interface DBOrder {
   id: string;
   Name: string;
   Date: string;

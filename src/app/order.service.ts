@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Order } from './order';
+import { DBOrder } from './DBorder';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -14,7 +14,7 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   async getOrders() {
-    return await this.http.get<Order[]>(this.OrdersUrl).toPromise()
+    return await this.http.get<DBOrder[]>(this.OrdersUrl).toPromise()
     // .pipe(retry(3), catchError(this.handleError<Order[]>('getOrders', []))
 
 

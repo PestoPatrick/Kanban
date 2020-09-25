@@ -1,5 +1,4 @@
 import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
-import { Order } from '../order';
 import { OrderService } from '../order.service';
 import { UpdateOrderService } from '../update-order.service'
 
@@ -173,8 +172,10 @@ export class OrderColumnsComponent implements OnInit {
       width: '45%', height: '45%', autoFocus: false, data: { neworderinfo: this.neworder }
     })
 
+
+    // good place to inject the order modifier to turn order back to db format
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog was closed. returned ' + result)
+      console.log('dialog was closed. returned ', result['orderName'])
       this.neworder = result;
       console.log(this.neworder['socials'])
     });
