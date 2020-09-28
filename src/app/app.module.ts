@@ -53,7 +53,7 @@ import { ClickStopPropagationDirective } from './click-stop-propagation.directiv
     ReactiveFormsModule,
     MatButtonModule,
     MatIconModule,
-    MatRadioModule
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

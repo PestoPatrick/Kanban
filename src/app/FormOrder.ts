@@ -1,14 +1,14 @@
 export interface FormOrder {
-  id: string;
+  _id: string;
   Name: string;
   Date: string;
-  socials: string;
+  Socials: string;
   Item: string;
   Design: string;
   Colour: string;
   Amount: number;
-  payment: string;
+  Payment: string;
   Address: string;
-  deliverymethod: string;
+  DeliveryMethod: string;
   State: string;
 }

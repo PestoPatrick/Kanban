@@ -1,12 +1,13 @@
 <h1 mat-dialog-title>Order Details</h1>
 <mat-dialog-content>
   <form [formGroup]="editOrderForm" (ngSubmit)="onSubmit()">
+
     <p class="para">
       {{orderinfo?.orderinfo.Name}}
     </p>
     <mat-form-field>
       <mat-label> Name </mat-label>
-      <input matInput type="text" placeholder="Name" formControlName="orderName" required />
+      <input matInput type="text" placeholder="Name" formControlName="Name" required />
     </mat-form-field>
 
     <p class="para">
@@ -14,7 +15,7 @@
     </p>
     <mat-form-field>
       <mat-label> Date </mat-label>
-      <input matInput type="date" placeholder="Date" formControlName="orderDate" required />
+      <input matInput type="date" placeholder="Date" formControlName="Date" required />
     </mat-form-field>
 
     <p class="para">
@@ -22,7 +23,7 @@
     </p>
     <mat-form-field>
       <mat-label> Items </mat-label>
-      <input matInput type="text" placeholder="Items" formControlName="orderItems" required />
+      <input matInput type="text" placeholder="Items" formControlName="Item" required />
     </mat-form-field>
 
     <p class="para">
@@ -30,7 +31,7 @@
     </p>
     <mat-form-field>
       <mat-label> Design </mat-label>
-      <input matInput type="text" placeholder="Design" formControlName="orderDesign" required />
+      <input matInput type="text" placeholder="Design" formControlName="Design" required />
     </mat-form-field>
 
     <p class="para">
@@ -38,7 +39,7 @@
     </p>
     <mat-form-field>
       <mat-label> Colours </mat-label>
-      <input matInput type="text" placeholder="Colours" formControlName="orderColours" required />
+      <input matInput type="text" placeholder="Colours" formControlName="Colour" required />
     </mat-form-field>
 
     <p class="para">
@@ -46,7 +47,7 @@
     </p>
     <mat-form-field>
       <mat-label> Address </mat-label>
-      <input matInput type="text" placeholder="Address" formControlName="orderAddress" required />
+      <input matInput type="text" placeholder="Address" formControlName="Address" required />
     </mat-form-field>
 
     <p class="para">
@@ -54,13 +55,13 @@
     </p>
     <mat-form-field>
       <mat-label> Amount</mat-label>
-      <input matInput type="text" class="Amount" placeholder="Amount" formControlName="orderAmount" required />
+      <input matInput type="text" class="Amount" placeholder="Amount" formControlName="Amount" required />
     </mat-form-field>
 
     <section class="radiobuttongroup">
       <h2>Ordered From</h2>
-      <p class="para">{{orderinfo?.orderinfo.socials}}</p>
-      <mat-radio-group formControlName="socials" required>
+      <p class="para">{{orderinfo?.orderinfo.Socials}}</p>
+      <mat-radio-group formControlName="Socials" required>
         <mat-radio-button value="FB" class="radiobutton">FB</mat-radio-button>
         <mat-radio-button value="Instagram" class="radiobutton">Instagram</mat-radio-button>
         <mat-radio-button value="Email" class="radiobutton">Email</mat-radio-button>
@@ -69,8 +70,8 @@
 
     <section class="radiobuttongroup">
       <h2>Payment Method</h2>
-      <p class="para">{{orderinfo?.orderinfo.payment}}</p>
-      <mat-radio-group formControlName="payment">
+      <p class="para">{{orderinfo?.orderinfo.Payment}}</p>
+      <mat-radio-group formControlName="Payment">
         <mat-radio-button value="Bank_Transfer" class="radiobutton">Bank Transfer
         </mat-radio-button>
         <mat-radio-button value="PayPal" class="radiobutton">PayPal</mat-radio-button>
@@ -80,8 +81,8 @@
 
     <section class="radiobuttongroup">
       <h2>Delivery Method</h2>
-      <p class="para">{{orderinfo.orderinfo.deliverymethod}}</p>
-      <mat-radio-group formControlName="deliverymethod">
+      <p class="para">{{orderinfo.orderinfo.DeliveryMethod}}</p>
+      <mat-radio-group formControlName="DeliveryMethod">
         <mat-radio-button value="Delivery" class="radiobutton">Delivery</mat-radio-button>
         <mat-radio-button value="Collection" class="radiobutton">
           Collection

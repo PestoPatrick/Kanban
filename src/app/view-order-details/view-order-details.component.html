@@ -22,13 +22,13 @@
 <h4>{{orderinfo?.orderinfo.Amount}}</h4>
 
 <h2 class="mat-h2">Payment Method</h2>
-<h4>{{ payMethod }}</h4>
+<h4>{{ orderinfo.orderinfo.Paymentr}}</h4>
 
 <h2 class="mat-h2">Delivery Method</h2>
-<h4>{{ deliveryMethod }}</h4>
+<h4>{{ orderinfo.orderinfo.DeliveryMethod }}</h4>
 
 <h2 class="mat-h2">Ordered From</h2>
-<h4>{{ orderedFrom }}</h4>
+<h4>{{ orderinfo.orderinfo.Socials }}</h4>
 
 <div mat-dialog-actions>
   <button mat-button color="warn" matDialogClose (click)="onCloseClick()">Close</button>

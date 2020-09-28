@@ -1,14 +1,14 @@
-import { Component, OnInit, Input, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { OrderService } from '../order.service';
 import { UpdateOrderService } from '../update-order.service';
 import { FormOrder } from '../FormOrder'
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { observable, Observable } from 'rxjs';
-import { InvokeFunctionExpr } from '@angular/compiler';
 import { __values } from 'tslib';
 import { MatDialog } from '@angular/material/dialog';
 import { OrderDetailsComponent } from '../order-details/order-details.component';
+import { OrderModifierService } from '../order-modifier.service';
+import { DBOrder } from '../DBorder';
 @Component({
   selector: 'app-order-columns',
   templateUrl: './order-columns.component.html',
@@ -16,10 +16,11 @@ import { OrderDetailsComponent } from '../order-details/order-details.component'
 })
 export class OrderColumnsComponent implements OnInit {
 
-  constructor(private orderService: OrderService, public dialog: MatDialog, private updateOrderService: UpdateOrderService) { }
+  constructor(private orderService: OrderService, public dialog: MatDialog, private updateOrderService: OrderService, private orderModifier: OrderModifierService) { }
   @Input() errorMessage: object;
 
   neworder: FormOrder;
+  newOrderDB: DBOrder;
 
   ordersJSON = [];
 
@@ -117,7 +118,7 @@ export class OrderColumnsComponent implements OnInit {
 
 
   async updateOrder(order) {
-    await this.updateOrderService.updateState(order)
+    await this.orderService.updateState(order)
   }
 
   async getOrders() {
@@ -176,9 +177,11 @@ export class OrderColumnsComponent implements OnInit {
 
     // good place to inject the order modifier to turn order back to db format
     dialogRef.afterClosed().subscribe(result => {
-      console.log('dialog was closed. returned ', result['orderName'])
+      console.log('dialog was closed. returned ', result['Name'])
       this.neworder = result;
-      console.log(this.neworder['socials'])
+      this.newOrderDB = this.orderModifier.convertoDB(this.neworder)
+      this.updateOrderService.newOrder(this.newOrderDB)
+      this.ordered.push(this.newOrderDB)
     });
   }
 

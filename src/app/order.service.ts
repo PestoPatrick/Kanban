@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class OrderService {
   private OrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/all';
+  private UpdateOrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/'
 
 
   constructor(private http: HttpClient) { }
@@ -16,10 +17,39 @@ export class OrderService {
   async getOrders() {
     return await this.http.get<DBOrder[]>(this.OrdersUrl).toPromise()
     // .pipe(retry(3), catchError(this.handleError<Order[]>('getOrders', []))
-
-
-
   }
+
+  updateOrder(order) {
+    // this.http.patch<DBOrder>(this.UpdateOrdersUrl, order).toPromise()
+    console.log('order changed' + order)
+  }
+
+  async updateState(order) {
+    await this.http.patch<DBOrder>(this.UpdateOrdersUrl, order).toPromise()
+  }
+
+  async newOrder(order) {
+    await this.http.put<DBOrder>(this.UpdateOrdersUrl, order).toPromise()
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /**
    * Handle Http operation that failed.
    * Let the app continue.

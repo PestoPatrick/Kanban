@@ -4,6 +4,7 @@ import { OrderColumnsComponent } from '../order-columns/order-columns.component'
 import { DBOrder } from '../DBorder';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+
 @Component({
   selector: 'app-edit-order',
   templateUrl: './edit-order.component.html',
@@ -19,25 +20,28 @@ export class EditOrderComponent implements OnInit {
 
 
   editOrderForm = this.fb.group({
-    orderName: [this.orderinfo.orderinfo.Name, Validators.required],
-    orderDate: [this.orderinfo.orderinfo.Date, Validators.required],
-    orderItems: [this.orderinfo.orderinfo.Item, Validators.required],
-    orderDesign: [this.orderinfo.orderinfo.Design, Validators.required],
-    orderColours: [this.orderinfo.orderinfo.Colour, Validators.required],
-    orderAddress: [this.orderinfo.orderinfo.Address, Validators.required],
-    orderAmount: [this.orderinfo.orderinfo.Amount, Validators.required],
+    _id: [this.orderinfo.orderinfo._id],
+    Name: [this.orderinfo.orderinfo.Name, Validators.required],
+    Date: [this.orderinfo.orderinfo.Date, Validators.required],
+    Item: [this.orderinfo.orderinfo.Item, Validators.required],
+    Design: [this.orderinfo.orderinfo.Design, Validators.required],
+    Colour: [this.orderinfo.orderinfo.Colour, Validators.required],
+    Address: [this.orderinfo.orderinfo.Address, Validators.required],
+    Amount: [this.orderinfo.orderinfo.Amount, Validators.required],
     payment: [this.orderinfo.orderinfo.payment, Validators.required],
     socials: [this.orderinfo.orderinfo.socials, Validators.required],
-    deliverymethod: [this.orderinfo.orderinfo.deliverymethod, Validators.required]
+    deliverymethod: [this.orderinfo.orderinfo.deliverymethod, Validators.required],
+    State: [this.orderinfo.orderinfo.State],
   })
 
 
 
-  onSubmit() { }
+  onSubmit() {
+    this.dialogRef.close(this.editOrderForm.value);
+  }
 
   onClose() {
     this.dialogRef.close();
-    this.dialogRef.close(this.editOrderForm.value);
   }
 
   ngOnInit(): void {

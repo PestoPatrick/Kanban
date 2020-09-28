@@ -14,7 +14,7 @@ export class UpdateOrderService {
   constructor(private http: HttpClient) { }
 
   updateOrder(order) {
-    this.http.patch<DBOrder>(this.OrdersUrl, order).toPromise()
+    // this.http.patch<DBOrder>(this.OrdersUrl, order).toPromise()
   }
 
   async updateState(order) {

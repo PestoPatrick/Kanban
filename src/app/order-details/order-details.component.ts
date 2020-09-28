@@ -13,16 +13,17 @@ export class OrderDetailsComponent {
 
 
   orderForm = this.fb.group({
-    orderName: ['', Validators.required],
-    orderDate: ['', Validators.required],
-    orderItems: ['', Validators.required],
-    orderDesign: ['', Validators.required],
-    orderColours: ['', Validators.required],
-    orderAddress: ['', Validators.required],
-    orderAmount: ['', Validators.required],
+    Name: ['', Validators.required],
+    Date: ['', Validators.required],
+    Item: ['', Validators.required],
+    Design: ['', Validators.required],
+    Colour: ['', Validators.required],
+    Address: ['', Validators.required],
+    Amount: ['', Validators.required],
     payment: ['', Validators.required],
     socials: ['', Validators.required],
-    deliverymethod: ['', Validators.required]
+    deliverymethod: ['', Validators.required],
+    State: ['ordered']
   })
 
   constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<OrderDetailsComponent>, @Inject(MAT_DIALOG_DATA) public neworderinfo) { }
