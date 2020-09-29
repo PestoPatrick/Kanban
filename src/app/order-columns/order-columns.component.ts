@@ -116,7 +116,7 @@ export class OrderColumnsComponent implements OnInit {
 
 
   async updateOrder(order) {
-    await this.orderService.updateState(order)
+    await this.orderService.updateOrder(order)
   }
 
   async getOrders() {

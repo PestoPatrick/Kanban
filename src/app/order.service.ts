@@ -11,9 +11,12 @@ import { Form } from '@angular/forms';
 export class OrderService {
   private OrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/all';
   private UpdateOrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/'
+  private NewOrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/new';
 
 
   constructor(private http: HttpClient) { }
+
+
 
   async getOrders() {
     return await this.http.get<FormOrder[]>(this.OrdersUrl).toPromise();
@@ -31,7 +34,7 @@ export class OrderService {
 
   async newOrder(order) {
     console.log(order);
-    await this.http.post<FormOrder>(this.UpdateOrdersUrl, order).toPromise();
+    console.log(await this.http.post<FormOrder>(this.UpdateOrdersUrl, order).toPromise());
   }
 
 
