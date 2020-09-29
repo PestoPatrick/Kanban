@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { OrderColumnsComponent } from '../order-columns/order-columns.component';
-import { DBOrder } from '../DBorder';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 
@@ -28,9 +27,9 @@ export class EditOrderComponent implements OnInit {
     Colour: [this.orderinfo.orderinfo.Colour, Validators.required],
     Address: [this.orderinfo.orderinfo.Address, Validators.required],
     Amount: [this.orderinfo.orderinfo.Amount, Validators.required],
-    payment: [this.orderinfo.orderinfo.payment, Validators.required],
-    socials: [this.orderinfo.orderinfo.socials, Validators.required],
-    deliverymethod: [this.orderinfo.orderinfo.deliverymethod, Validators.required],
+    Payment: [this.orderinfo.orderinfo.Payment, Validators.required],
+    Socials: [this.orderinfo.orderinfo.Socials, Validators.required],
+    DeliveryMethod: [this.orderinfo.orderinfo.DeliveryMethod, Validators.required],
     State: [this.orderinfo.orderinfo.State],
   })
 

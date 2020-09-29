@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { EditOrderComponent } from '../edit-order/edit-order.component';
-import { DBOrder } from '../DBorder';
 import { ViewOrderDetailsComponent } from '../view-order-details/view-order-details.component';
 import { OrderModifierService } from "../order-modifier.service";
 import { OrderService } from '../order.service';
@@ -28,8 +27,8 @@ export class OrdersComponent implements OnInit {
       width: '45%', height: '45%', autoFocus: false, data: { orderinfo: this.order }
     });
 
-
-
+    dialogRef.afterClosed().subscribe(result =>
+      console.log(result))
   }
 
   onEditClick() {

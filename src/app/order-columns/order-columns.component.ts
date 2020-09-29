@@ -8,7 +8,6 @@ import { __values } from 'tslib';
 import { MatDialog } from '@angular/material/dialog';
 import { OrderDetailsComponent } from '../order-details/order-details.component';
 import { OrderModifierService } from '../order-modifier.service';
-import { DBOrder } from '../DBorder';
 @Component({
   selector: 'app-order-columns',
   templateUrl: './order-columns.component.html',
@@ -20,7 +19,7 @@ export class OrderColumnsComponent implements OnInit {
   @Input() errorMessage: object;
 
   neworder: FormOrder;
-  newOrderDB: DBOrder;
+
 
   ordersJSON = [];
 
@@ -179,9 +178,8 @@ export class OrderColumnsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('dialog was closed. returned ', result['Name'])
       this.neworder = result;
-      this.newOrderDB = this.orderModifier.convertoDB(this.neworder)
-      this.updateOrderService.newOrder(this.newOrderDB)
-      this.ordered.push(this.newOrderDB)
+      this.updateOrderService.newOrder(this.neworder)
+      this.ordered.push(this.neworder)
     });
   }
 

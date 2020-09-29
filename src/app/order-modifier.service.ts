@@ -1,7 +1,6 @@
 import { Statement } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { FormOrder } from 'src/app/FormOrder';
-import { DBOrder } from './DBorder';
 
 @Injectable({
   providedIn: 'root',
@@ -89,7 +88,7 @@ export class OrderModifierService {
   }
 
 
-  convertFromDB(orderFrom: DBOrder) {
+  convertFromDB(orderFrom) {
     let Socials: string;
     let Payment: string;
     let DeliveryMethod: string;

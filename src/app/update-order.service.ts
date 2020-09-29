@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { DBOrder } from './DBorder';
+import { FormOrder } from './FormOrder';
+
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,6 @@ export class UpdateOrderService {
   }
 
   async updateState(order) {
-    await this.http.patch<DBOrder>(this.OrdersUrl, order).toPromise()
+    await this.http.patch<FormOrder>(this.OrdersUrl, order).toPromise()
   }
 }

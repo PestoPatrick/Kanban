@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { DBOrder } from './DBorder';
 import { retry, catchError } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { FormOrder } from './FormOrder';
+import { Form } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   async getOrders() {
-    return await this.http.get<DBOrder[]>(this.OrdersUrl).toPromise()
+    return await this.http.get<FormOrder[]>(this.OrdersUrl).toPromise()
     // .pipe(retry(3), catchError(this.handleError<Order[]>('getOrders', []))
   }
 
@@ -25,11 +26,11 @@ export class OrderService {
   }
 
   async updateState(order) {
-    await this.http.patch<DBOrder>(this.UpdateOrdersUrl, order).toPromise()
+    await this.http.patch<FormOrder>(this.UpdateOrdersUrl, order).toPromise()
   }
 
   async newOrder(order) {
-    await this.http.put<DBOrder>(this.UpdateOrdersUrl, order).toPromise()
+    await this.http.put<FormOrder>(this.UpdateOrdersUrl, order).toPromise()
   }
 
 
