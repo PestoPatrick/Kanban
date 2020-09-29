@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { OrderModifierService } from './order-modifier.service';
+import { DateConvertService } from './date-convert.service';
 
-describe('OrderModifierService', () => {
-  let service: OrderModifierService;
+describe('DateConvertService', () => {
+  let service: DateConvertService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(OrderModifierService);
+    service = TestBed.inject(DateConvertService);
   });
 
   it('should be created', () => {

@@ -19,9 +19,9 @@ export class OrderDetailsComponent {
     Colour: ['', Validators.required],
     Address: ['', Validators.required],
     Amount: ['', Validators.required],
-    payment: ['', Validators.required],
-    socials: ['', Validators.required],
-    deliverymethod: ['', Validators.required],
+    Payment: ['', Validators.required],
+    Socials: ['', Validators.required],
+    DeliveryMethod: ['', Validators.required],
     State: ['ordered']
   })
 

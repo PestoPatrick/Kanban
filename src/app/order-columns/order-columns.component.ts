@@ -1,13 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { OrderService } from '../order.service';
-import { UpdateOrderService } from '../update-order.service';
 import { FormOrder } from '../FormOrder'
 
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { __values } from 'tslib';
 import { MatDialog } from '@angular/material/dialog';
 import { OrderDetailsComponent } from '../order-details/order-details.component';
-import { OrderModifierService } from '../order-modifier.service';
+
 @Component({
   selector: 'app-order-columns',
   templateUrl: './order-columns.component.html',
@@ -15,7 +14,7 @@ import { OrderModifierService } from '../order-modifier.service';
 })
 export class OrderColumnsComponent implements OnInit {
 
-  constructor(private orderService: OrderService, public dialog: MatDialog, private updateOrderService: OrderService, private orderModifier: OrderModifierService) { }
+  constructor(private orderService: OrderService, public dialog: MatDialog) { }
   @Input() errorMessage: object;
 
   neworder: FormOrder;
@@ -174,11 +173,10 @@ export class OrderColumnsComponent implements OnInit {
     })
 
 
-    // good place to inject the order modifier to turn order back to db format
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe(async result => {
       console.log('dialog was closed. returned ', result['Name'])
       this.neworder = result;
-      this.updateOrderService.newOrder(this.neworder)
+      await this.orderService.newOrder(this.neworder).then().catch(err => console.log(err))
       this.ordered.push(this.neworder)
     });
   }

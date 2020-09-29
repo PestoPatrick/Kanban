@@ -16,21 +16,22 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   async getOrders() {
-    return await this.http.get<FormOrder[]>(this.OrdersUrl).toPromise()
-    // .pipe(retry(3), catchError(this.handleError<Order[]>('getOrders', []))
+    return await this.http.get<FormOrder[]>(this.OrdersUrl).toPromise();
   }
 
-  updateOrder(order) {
-    // this.http.patch<DBOrder>(this.UpdateOrdersUrl, order).toPromise()
+  async updateOrder(order) {
+    await this.http.patch<FormOrder>(this.UpdateOrdersUrl, order).toPromise();
     console.log('order changed' + order)
   }
 
   async updateState(order) {
-    await this.http.patch<FormOrder>(this.UpdateOrdersUrl, order).toPromise()
+    console.log(order)
+    await this.http.patch<FormOrder>(this.UpdateOrdersUrl, order).toPromise();
   }
 
   async newOrder(order) {
-    await this.http.put<FormOrder>(this.UpdateOrdersUrl, order).toPromise()
+    console.log(order);
+    await this.http.post<FormOrder>(this.UpdateOrdersUrl, order).toPromise();
   }
 
 
