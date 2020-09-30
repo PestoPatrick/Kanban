@@ -176,8 +176,12 @@ export class OrderColumnsComponent implements OnInit {
     dialogRef.afterClosed().subscribe(async result => {
       console.log('dialog was closed. returned ', result['Name'])
       this.neworder = result;
-      await this.orderService.newOrder(this.neworder).then().catch(err => console.log(err))
-      this.ordered.push(this.neworder)
+      this.orderService.newOrder(this.neworder)
+        .then((promise) => {
+          console.log('the new order', promise)
+          this.ordered.push(this.neworder)
+        })
+        .catch(err => console.log(err))
     });
   }
 

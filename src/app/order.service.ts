@@ -9,9 +9,8 @@ import { Form } from '@angular/forms';
   providedIn: 'root',
 })
 export class OrderService {
-  private OrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/all';
-  private UpdateOrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/'
-  private NewOrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/new';
+  private AllOrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/all';
+  private OrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders'
 
 
   constructor(private http: HttpClient) { }
@@ -19,22 +18,22 @@ export class OrderService {
 
 
   async getOrders() {
-    return await this.http.get<FormOrder[]>(this.OrdersUrl).toPromise();
+    return await this.http.get<FormOrder[]>(this.AllOrdersUrl).toPromise();
   }
 
   async updateOrder(order) {
-    await this.http.patch<FormOrder>(this.UpdateOrdersUrl, order).toPromise();
+    await this.http.patch<FormOrder>(this.OrdersUrl, order).toPromise();
     console.log('order changed' + order)
-  }
-
-  async updateState(order) {
-    console.log(order)
-    await this.http.patch<FormOrder>(this.UpdateOrdersUrl, order).toPromise();
   }
 
   async newOrder(order) {
     console.log(order);
-    console.log(await this.http.post<FormOrder>(this.UpdateOrdersUrl, order).toPromise());
+    return await this.http.post<FormOrder>(this.OrdersUrl, order).toPromise();
+  }
+
+  async deleteOrder(order) {
+    console.log(order);
+    return await this.http.delete<FormOrder>(this.OrdersUrl, order).toPromise();
   }
 
 

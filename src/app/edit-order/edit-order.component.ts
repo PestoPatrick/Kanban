@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { OrderColumnsComponent } from '../order-columns/order-columns.component';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-edit-order',
@@ -11,7 +12,7 @@ import { MatRadioModule } from '@angular/material/radio';
 })
 export class EditOrderComponent implements OnInit {
 
-  constructor(public fb: FormBuilder, public dialogRef: MatDialogRef<EditOrderComponent>, @Inject(MAT_DIALOG_DATA) public orderinfo) { }
+  constructor(public fb: FormBuilder, public dialogRef: MatDialogRef<EditOrderComponent>, @Inject(MAT_DIALOG_DATA) public orderinfo, private orderService: OrderService) { }
 
   // next need to make service with a function to convert order to what it needs to look like to be used in the form such as time and text for payment method etc
   // and then make another function that converts it back to the database format of boolean options and time format
@@ -38,6 +39,20 @@ export class EditOrderComponent implements OnInit {
   onSubmit() {
     this.dialogRef.close(this.editOrderForm.value);
   }
+
+  // async onClickDelete() {
+  //   if (confirm("Are you sure you want to delete " + this.editOrderForm.value.Name)) {
+  //     this.orderService.deleteOrder(this.editOrderForm.value)
+  //       .then((result) => {
+  //         console.log(result)
+  //         return result
+  //       })
+  //       .catch((error) => {
+  //         console.log(error)
+  //         return error
+  //       })
+  // }
+  // }
 
   onClose() {
     this.dialogRef.close();
