@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="ordered">
-        <app-orders [order]="order" *ngFor="let order of ordered">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of ordered, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="instock">
-        <app-orders [order]="order" *ngFor="let order of instock">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of instock, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -46,7 +46,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="tied">
-        <app-orders [order]="order" *ngFor="let order of tied">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of tied, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -57,7 +57,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="dyed">
-        <app-orders [order]="order" *ngFor="let order of dyed">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of dyed, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -68,7 +68,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="rinsed">
-        <app-orders [order]="order" *ngFor="let order of rinsed">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of rinsed, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -79,7 +79,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="washed">
-        <app-orders [order]="order" *ngFor="let order of washed">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of washed, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -90,7 +90,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="dried">
-        <app-orders [order]="order" *ngFor="let order of dried">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of dried, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -101,7 +101,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="ironed">
-        <app-orders [order]="order" *ngFor="let order of ironed">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of ironed, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -112,7 +112,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="packaged">
-        <app-orders [order]="order" *ngFor="let order of packaged">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of packaged, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -123,7 +123,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="posted">
-        <app-orders [order]="order" *ngFor="let order of posted">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of posted, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -134,7 +134,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="delivered">
-        <app-orders [order]="order" *ngFor="let order of delivered">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of delivered, let i = index">{{order}}</app-orders>
       </div>
     </div>
 
@@ -145,7 +145,7 @@
         </div>
       </div>
       <div class="task-area" (cdkDropListDropped)="drop($event)" cdkDropList [cdkDropListData]="completed">
-        <app-orders [order]="order" *ngFor="let order of completed">{{order}}</app-orders>
+        <app-orders [order]="order" *ngFor="let order of completed, let i = index">{{order}}</app-orders>
       </div>
     </div>
 

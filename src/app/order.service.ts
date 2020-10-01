@@ -22,13 +22,17 @@ export class OrderService {
   }
 
   async updateOrder(order) {
-    await this.http.patch<FormOrder>(this.OrdersUrl, order).toPromise();
+    return await this.http.patch<FormOrder>(this.OrdersUrl, order).toPromise();
     console.log('order changed' + order)
+  }
+
+  async updateState(order) {
+    await this.http.patch<FormOrder>(this.OrdersUrl, order).toPromise();
   }
 
   async newOrder(order) {
     console.log(order);
-    return await this.http.post<FormOrder>(this.OrdersUrl, order).toPromise();
+    return await this.http.post(this.OrdersUrl, order).toPromise();
   }
 
   async deleteOrder(order) {

@@ -166,6 +166,7 @@ export class OrderColumnsComponent implements OnInit {
     return this.ordersJSON
   }
 
+
   onClickNewOrder() {
     console.log('new order clicked')
     const dialogRef = this.dialog.open(OrderDetailsComponent, {
@@ -175,13 +176,13 @@ export class OrderColumnsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(async result => {
       console.log('dialog was closed. returned ', result['Name'])
-      this.neworder = result;
-      this.orderService.newOrder(this.neworder)
+      let newOrderData = result
+      console.log(this.orderService.newOrder(newOrderData)
         .then((promise) => {
           console.log('the new order', promise)
-          this.ordered.push(this.neworder)
+          this.ordered.push(promise)
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log(err)))
     });
   }
 

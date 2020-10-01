@@ -35,17 +35,17 @@ export class OrdersComponent implements OnInit {
   }
 
   onEditClick() {
-    let orderinfo = this.order;
-    orderinfo.Date = this.dateModifier.DateChange(orderinfo.Date)
+    this.order;
+    this.order.Date = this.dateModifier.DateChange(this.order.Date)
     console.log(this.order)
     const dialogRef = this.dialog.open(EditOrderComponent, {
-      width: '45%', height: '45%', autoFocus: true, data: { orderinfo }
+      width: '45%', height: '45%', autoFocus: true, data: { orderinfo: this.order }
     });
 
     dialogRef.afterClosed().subscribe(async result => {
-      let orderinfo = this.order
+      this.order
       let formresult: FormOrder = result;
-      if (lodash.isEqual(orderinfo, formresult)) {
+      if (lodash.isEqual(this.order, formresult)) {
         console.log("hasn't changed");
       } else {
         await this.orderService.updateOrder(result);
@@ -54,6 +54,11 @@ export class OrdersComponent implements OnInit {
         }
       }
     })
+  }
+
+  onDeleteClick() {
+    this.order;
+    this.orderService.deleteOrder(this.order)
   }
   ngOnInit(): void {
 
