@@ -186,11 +186,11 @@ export class OrderColumnsComponent implements OnInit {
     });
   }
 
+
   ngOnInit() {
     let result = this.fetchAndSort();
     console.log(result);
   }
-
 }
 
 
