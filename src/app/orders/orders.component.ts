@@ -74,19 +74,5 @@ export class OrdersComponent implements OnInit {
       });
   }
 
-
-  // async DeleteOrder(order) {
-  //   console.log(order)
-
-  //     .then(result => {
-  //       console.log(result)
-  //       return result
-  //     })
-  //     .catch(err => {
-  //       console.error(err)
-  //       return err;
-  //     })
-  // }
-
   ngOnInit(): void { }
 }
