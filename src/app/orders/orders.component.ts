@@ -62,10 +62,16 @@ export class OrdersComponent implements OnInit {
     });
   }
 
-  onDeleteClick() {
-    let selectOrder = this.order;
-    console.log(selectOrder);
-    this.orderService.deleteOrder(selectOrder).subscribe();
+  async onDeleteClick() {
+    console.log(this.order._id);
+    await this.orderService.deleteOrder(this.order._id)
+      .then((result) => {
+        return result
+      })
+      .catch((error) => {
+        console.log(error)
+        return error
+      });
   }
 
 

@@ -9,13 +9,12 @@ import { Form } from '@angular/forms';
   providedIn: 'root',
 })
 export class OrderService {
-  private AllOrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/all';
-  private OrdersUrl = 'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders'
-
+  private AllOrdersUrl =
+    'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/all';
+  private OrdersUrl =
+    'http://ec2-3-8-216-76.eu-west-2.compute.amazonaws.com:3000/orders/';
 
   constructor(private http: HttpClient) { }
-
-
 
   async getOrders() {
     return await this.http.get<FormOrder[]>(this.AllOrdersUrl).toPromise();
@@ -23,7 +22,7 @@ export class OrderService {
 
   async updateOrder(order) {
     return await this.http.patch<FormOrder>(this.OrdersUrl, order).toPromise();
-    console.log('order changed' + order)
+    console.log('order changed' + order);
   }
 
   async updateState(order) {
@@ -35,9 +34,7 @@ export class OrderService {
     return await this.http.post(this.OrdersUrl, order).toPromise();
   }
 
-  deleteOrder(order) {
-    return this.http.delete<FormOrder>(this.OrdersUrl, order)
+  async deleteOrder(orderid) {
+    return await this.http.delete(this.OrdersUrl + orderid).toPromise();
   }
-
-
 }
