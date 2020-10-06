@@ -64,14 +64,16 @@ export class OrdersComponent implements OnInit {
 
   async onDeleteClick() {
     console.log(this.order._id);
-    await this.orderService.deleteOrder(this.order._id)
-      .then((result) => {
-        return result
-      })
-      .catch((error) => {
-        console.log(error)
-        return error
-      });
+    if (confirm('Are you sure you want to delete' + this.order.Name)) {
+      await this.orderService.deleteOrder(this.order._id)
+        .then((result) => {
+          return result
+        })
+        .catch((error) => {
+          console.log(error)
+          return error
+        });
+    }
   }
 
   ngOnInit(): void { }
