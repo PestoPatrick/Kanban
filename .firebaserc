@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "tdb-orders": {
+      "hosting": {
+        "Kanban": [
+          "tdb-orders"
+        ]
+      }
+    }
+  }
+}
